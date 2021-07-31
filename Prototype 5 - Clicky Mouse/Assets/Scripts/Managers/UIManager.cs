@@ -16,8 +16,7 @@ namespace ClickyMause
         [SerializeField] private GameObject TargetInfoButton;
         [Header("Pause UI")]
         [SerializeField] private GameObject pauseMenu;
-        [SerializeField] private TextMeshProUGUI pauseTest;
-        [SerializeField] private GameObject restartButton;
+        [SerializeField] private Button pauseButton;
         [Header("Health UI")]
         [SerializeField] private GameObject healthUIParent;
         [SerializeField] private TextMeshProUGUI healthValueText;
@@ -84,17 +83,15 @@ namespace ClickyMause
         {
             if (isPaused)
             {
-                pauseTest.text = "Pause";
                 pauseMenu.SetActive(false);
-                restartButton.SetActive(false);
                 isPaused = false;
+                pauseButton.gameObject.SetActive(true);
             }
             else
             {
-                pauseTest.text = "Resume";
                 pauseMenu.SetActive(true);
-                restartButton.SetActive(true);
                 isPaused = true;
+                pauseButton.gameObject.SetActive(false);
             }
 
         }
