@@ -1,17 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 namespace ClickyMause.Targets
 {
     public abstract class AbstractTarget : MonoBehaviour
     {
         [SerializeField] protected int pointValue;
-        //[SerializeField] protected ParticleSystem explosionParticle;
         [SerializeField] protected PlayerData playerData;
         [SerializeField] protected ParticleColor partickleColor;
+        [Header("Audio")]
+        [SerializeField] protected AudioClip onClickAudioClip;
+
+        protected AudioSource targetAudioSource;
+        protected Rigidbody targetRB;
+        protected MeshRenderer targetMeshRenderer;
 
         protected ObjectPool particlePool;
-
-        protected Rigidbody targetRB;
 
         protected float minForce = 10f;
         protected float maxForce = 15f;
@@ -24,6 +28,8 @@ namespace ClickyMause.Targets
         private void Awake()
         {
             targetRB = GetComponent<Rigidbody>();
+            targetAudioSource = GetComponent<AudioSource>();
+            targetMeshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void OnEnable()
@@ -47,19 +53,26 @@ namespace ClickyMause.Targets
         {
             if (isGameActive)
             {
-                playerData.AddScore(pointValue);
-                TargetActions();
-                //Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-                ParticleSystem particle = particlePool.GetParticle(partickleColor);
-                particle.gameObject.transform.position = transform.position;
-                particle.gameObject.SetActive(true);
-                gameObject.SetActive(false);
+                StartCoroutine(OnClickTargetCoroutine());
             }
+        }
+
+        private IEnumerator OnClickTargetCoroutine()
+        {
+            playerData.AddScore(pointValue);
+            TargetActions();
+            ParticleSystem particle = particlePool.GetParticle(partickleColor);
+            particle.gameObject.transform.position = transform.position;
+            particle.gameObject.SetActive(true);
+            targetMeshRenderer.enabled = false;
+            targetAudioSource.PlayOneShot(onClickAudioClip);
+            yield return new WaitForSeconds(onClickAudioClip.length);
+            gameObject.SetActive(false);
+            targetMeshRenderer.enabled = true;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            //Destroy(gameObject);
             targetRB.velocity = Vector3.zero;
             gameObject.SetActive(false);
         }

@@ -4,6 +4,7 @@ namespace ClickyMause.Targets
 {
     public class HealthyTargets : AbstractTarget
     {
+        [Header("Type Specific Variables")]
         [SerializeField] private int nutritiveValue;
         [SerializeField] [Range(0, 1)] private float healPoint;
         [SerializeField] private GameObject popUpPrefab;
