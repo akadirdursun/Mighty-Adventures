@@ -45,7 +45,7 @@ namespace ClickyMause
             {
                 elapsedTime += Time.deltaTime;
                 timePlaying = TimeSpan.FromSeconds(elapsedTime);
-                timerText.text = "Timer: " + timePlaying.ToString("mm':'ss");
+                timerText.text = timePlaying.ToString("mm':'ss");
                 //if (timePlaying.Seconds % secToLevelUp == 0)
                 //    StaticEvents.LevelUpDifficulty?.Invoke();
 
