@@ -73,7 +73,7 @@ namespace ClickyMause.Targets
 
         private void OnTriggerEnter(Collider other)
         {
-            targetRB.velocity = Vector3.zero;
+            targetRB.linearVelocity = Vector3.zero;
             gameObject.SetActive(false);
         }
 
