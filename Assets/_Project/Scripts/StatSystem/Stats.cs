@@ -31,5 +31,10 @@ namespace MightyAdventures.StatSystem
         public float HealthRegen => healthRegen;
         public int MinDamage => minDamage;
         public int MaxDamage => maxDamage;
+
+        public Stats Clone()
+        {
+            return new Stats(maxHealth, healthRegen, minDamage, maxDamage);
+        }
     }
 }
