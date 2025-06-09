@@ -8,6 +8,8 @@ namespace MightyAdventures.CharacterSystem
     {
         [SerializeField] private string characterName = "Mighty Adventurer";
         [SerializeField] private Stats stats;
+        [SerializeField] private GameObject prefab;
+            
 
         public string CharacterName => characterName;
         public Stats Stats => stats;
