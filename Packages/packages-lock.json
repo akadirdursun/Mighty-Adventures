@@ -79,6 +79,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "devlocker.utils.scenereference": {
+      "version": "https://github.com/NibbleByte/UnitySceneReference.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "706b3c7c611e11f77389673c7fc6e0bc6dd2e73b"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
