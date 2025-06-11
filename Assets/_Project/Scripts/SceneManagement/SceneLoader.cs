@@ -1,11 +1,12 @@
 using System;
 using DevLocker.Utils;
+using MightyAdventures.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MightyAdventures.SceneManagement
 {
-    public class SceneLoader : MonoBehaviour
+    public class SceneLoader : Singleton<SceneLoader>
     {
         [SerializeField] private SceneReference mainMenuScene;
         [SerializeField] private SceneReference gameScene;
