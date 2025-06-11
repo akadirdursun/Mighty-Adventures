@@ -1,3 +1,4 @@
+**NOTE: Always start from Master scene**
 # Mighty Adventures
  Purpose of the game is to stay alive as much encounters as possible. Player encounters enemies and through defeating them gains more power. 
 ## Gameplay
