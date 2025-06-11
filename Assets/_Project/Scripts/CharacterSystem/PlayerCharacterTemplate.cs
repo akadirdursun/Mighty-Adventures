@@ -13,5 +13,6 @@ namespace MightyAdventures.CharacterSystem
 
         public string CharacterName => characterName;
         public Stats Stats => stats;
+        public GameObject Prefab => prefab;
     }
 }
