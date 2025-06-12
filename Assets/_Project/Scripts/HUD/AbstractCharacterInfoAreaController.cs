@@ -1,33 +1,35 @@
-    using MightyAdventures.CharacterSystem;
+using MightyAdventures.StatSystem;
 using MightyAdventures.StatSystem.UI;
+using TMPro;
 using UnityEngine;
 
 namespace MightyAdventures.HUD
 {
-    public class PlayerCharacterAreaController : MonoBehaviour
+    public abstract class AbstractCharacterInfoAreaController : MonoBehaviour
     {
-        [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private TMP_Text nameText;
+        [Header("Stat Views")]
         [SerializeField] private StatTextView healthTextView;
         [SerializeField] private StatTextView healthRegenTextView;
         [SerializeField] private StatTextView damageResistanceTextView;
         [SerializeField] private StatTextView damageTextView;
 
-        private void Initialize()
+        protected void Initialize()
         {
-            var characterStats = playerCharacterData.CharacterStats;
+            var characterStats = GetCharacterStats();
+            nameText.text = GetCharacterName();
             healthTextView.Initialize("Health", characterStats.Health);
             healthRegenTextView.Initialize("Health Regen", characterStats.HealthRegen, "/s");
             damageResistanceTextView.Initialize("Damage Resistance", characterStats.DamageResistance, "%");
             damageTextView.Initialize("Damage", characterStats.Damage);
+            SetExtraAreas();
         }
 
-        #region MonoBehaviour Methods
-
-        private void Start()
+        protected virtual void SetExtraAreas()
         {
-            Initialize();
         }
-
-        #endregion
+        
+        protected abstract CharacterStats GetCharacterStats();
+        protected abstract string GetCharacterName();
     }
 }

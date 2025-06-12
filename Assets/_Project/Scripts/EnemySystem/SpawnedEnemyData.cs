@@ -13,15 +13,19 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private CharacterStats stats;
 
         public Action OnSpawnedEnemyChanged;
+        
+        public GameObject Prefab { get; private set; }
 
         public string Name => $"{enemyName} (Lv.{enemyLevel})";
+        public CharacterStats Stats => stats;
 
-        public void Initialize(string eName, int eLevel, int eExperience, CharacterStats eStats)
+        public void Initialize(string eName, int eLevel, int eExperience, CharacterStats eStats, GameObject ePrefab)
         {
             enemyName = eName;
             enemyLevel = eLevel;
             experience = eExperience;
             stats = eStats;
+            Prefab = ePrefab;
             OnSpawnedEnemyChanged?.Invoke();
         }
     }

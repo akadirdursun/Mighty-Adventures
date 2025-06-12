@@ -1,3 +1,4 @@
+using System;
 using MightyAdventures.StatSystem;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace MightyAdventures.CharacterSystem
         public int Level => level;
         public GameObject CharacterPrefab => _template.Prefab;
         public CharacterStats CharacterStats => characterStats;
+        public Action OnCharacterLevelChanged;
 
         public void InitializePlayerCharacter(PlayerCharacterTemplate template)
         {
