@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d051b0f4b49cc49bef9df393963de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterData: {fileID: 0}
+  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   healthTextView: {fileID: 703352732}
   healthRegenTextView: {fileID: 1067262080}
   damageResistanceTextView: {fileID: 1318364565}
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2e9151e74c3eb4eaaf542ba4a988e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterData: {fileID: 0}
+  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   parent: {fileID: 1080310924}
   modelScale: 100
 --- !u!1 &1146625740
