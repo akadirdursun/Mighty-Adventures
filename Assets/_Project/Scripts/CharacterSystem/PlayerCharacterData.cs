@@ -10,6 +10,7 @@ namespace MightyAdventures.CharacterSystem
         [SerializeField] private CharacterStats characterStats;
         private PlayerCharacterTemplate _template;
         public GameObject CharacterPrefab => _template.Prefab;
+        public CharacterStats CharacterStats => characterStats;
 
         public void InitializePlayerCharacter(PlayerCharacterTemplate template)
         {
