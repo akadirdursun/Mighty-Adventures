@@ -18,17 +18,15 @@
 ### Encounters
  Character gets random encounters through the game. Most of the encounters are monsters player fights but some encounters like Peddler.
 #### Enemies
-- Level 1 ~ 5
+- Level 1 ~ 3
     - Chicken
     - Rat
-    - Snake
+- Level 3 ~ 5
     - Slime
-    - Wolf
-- Level 6 ~ 10
-    - Goblin
-    - Bandit
-    - Skeleton
-    - Zombie
+    - ~~Goblin~~
+- ~~Level 6~~ ~~ 
+    - ~~Skeleton~~
+    - ~~Zombie~~
 #### Other
 - **Peddler:** Player can buy equipment or heal itself.
 ### Powering Up
