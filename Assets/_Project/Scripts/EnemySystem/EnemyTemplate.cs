@@ -12,6 +12,9 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private GameObject prefab;
         [SerializeField] private EnemyLevelInfo[] levelInfoArray;
 
+        public string Name => enemyName;
+        public GameObject Prefab => prefab;
+
         public bool TryGetLevelInfo(int level, out EnemyLevelInfo levelInfo)
         {
             EnemyLevelInfo tempLevelInfo = new EnemyLevelInfo();
@@ -26,9 +29,9 @@ namespace MightyAdventures.EnemySystem
             return isAvailable;
         }
 
-        public bool IsLevelAvailable(int level)
+        public bool IsAvailableToSpawn(Func<EnemyLevelInfo, bool> arg)
         {
-            return levelInfoArray.Any(info => info.level == level);
+            return levelInfoArray.Any(arg);
         }
     }
 
