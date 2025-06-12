@@ -7,7 +7,7 @@ namespace MightyAdventures.CharacterSystem
     public class PlayerCharacterData : ScriptableObject
     {
         [SerializeField] private string playerName;
-        [SerializeField] private Stats stats;
+        [SerializeField] private CharacterStats characterStats;
         private PlayerCharacterTemplate _template;
         public GameObject CharacterPrefab => _template.Prefab;
 
@@ -15,7 +15,7 @@ namespace MightyAdventures.CharacterSystem
         {
             _template = template;
             playerName = template.CharacterName;
-            stats = template.Stats.Clone();
+            characterStats = template.CharacterStats.Clone();
         }
     }
 }
