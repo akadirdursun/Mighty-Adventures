@@ -13,7 +13,7 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private CharacterStats stats;
 
         public Action OnSpawnedEnemyChanged;
-        
+
         public GameObject Prefab { get; private set; }
 
         public string Name => $"{enemyName} (Lv.{enemyLevel})";
@@ -27,6 +27,11 @@ namespace MightyAdventures.EnemySystem
             stats = eStats;
             Prefab = ePrefab;
             OnSpawnedEnemyChanged?.Invoke();
+        }
+
+        public void Damage(float damage)
+        {
+            stats.Health.ChangeValue(-damage);
         }
     }
 }

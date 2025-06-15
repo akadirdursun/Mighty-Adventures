@@ -3,7 +3,7 @@ using MightyAdventures.Utilities;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace MightyAdventures.ObjectSpawnSystem
+namespace MightyAdventures.SpawnSystem
 {
     public class ObjectPoolManager : Singleton<ObjectPoolManager>
     {
