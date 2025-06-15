@@ -6,11 +6,21 @@ namespace MightyAdventures.TargetSystem
     {
         [SerializeField] private Rigidbody targetRigidbody;
 
-        private const float MinForce = 10f;
-        private const float MaxForce = 15f;
-        private const float Torque = 10f;
+        private const float MinForce = 12f;
+        private const float MaxForce = 16f;
+        private const float Torque = 12f;
 
         public abstract void OnClick();
+
+        public void Enable()
+        {
+            targetRigidbody.isKinematic = false;
+        }
+
+        public void Disable()
+        {
+            targetRigidbody.isKinematic = true;
+        }
 
         public void Throw()
         {

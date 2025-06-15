@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MightyAdventures.TargetSystem;
 using MightyAdventures.Utilities;
 using UnityEngine;
@@ -10,12 +11,28 @@ namespace MightyAdventures.SpawnSystem
     {
         [SerializeField] private ObjectPoolInfo<AbstractTarget>[] targetPools;
 
+        private float _totalTargetProbability;
+
         private void Initialize()
         {
             foreach (var poolInfo in targetPools)
             {
-                poolInfo.InitializePool();
+                poolInfo.InitializePool(GenericOnCreate, GenericOnGet, GenericOnRelease);
+                _totalTargetProbability += poolInfo.SpawnChance;
             }
+        }
+
+        public AbstractTarget GetRandomTarget()
+        {
+            var currentProbability = 0f;
+            var randomProbability = UnityEngine.Random.Range(0f, _totalTargetProbability);
+            var selectedTargetPool = targetPools.First(poolInfo =>
+            {
+                currentProbability += poolInfo.SpawnChance;
+                var isSelected = currentProbability >= randomProbability;
+                return isSelected;
+            });
+            return selectedTargetPool.Pool.Get();
         }
 
         #region MonoBehaviour Methods
@@ -26,11 +43,30 @@ namespace MightyAdventures.SpawnSystem
         }
 
         #endregion
-        
+
+        #region Pool Methods
+
+        private void GenericOnCreate<T>(T obj, ObjectPool<T> objPool) where T : MonoBehaviour
+        {
+            obj.gameObject.SetActive(false);
+        }
+
+        private void GenericOnGet<T>(T obj) where T : MonoBehaviour
+        {
+            obj.gameObject.SetActive(true);
+        }
+
+        private void GenericOnRelease<T>(T obj) where T : MonoBehaviour
+        {
+            obj.gameObject.SetActive(false);
+        }
+
+        #endregion
+
         #region Structs
 
         [Serializable]
-        private struct ObjectPoolInfo<T> where T : Object
+        private class ObjectPoolInfo<T> where T : Object
         {
             [SerializeField] private T objectPrefab;
             [SerializeField] private int startingPoolSize;
@@ -40,9 +76,10 @@ namespace MightyAdventures.SpawnSystem
             public float SpawnChance => spawnChance;
             public ObjectPool<T> Pool => _pool;
 
-            public void InitializePool()
+            public void InitializePool(Action<T, ObjectPool<T>> createAct = null, Action<T> getAct = null,
+                Action<T> releaseAct = null)
             {
-                _pool = new ObjectPool<T>(objectPrefab, startingPoolSize);
+                _pool = new ObjectPool<T>(objectPrefab, startingPoolSize, createAct, getAct, releaseAct);
             }
         }
 

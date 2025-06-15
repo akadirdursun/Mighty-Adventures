@@ -57,8 +57,8 @@ namespace MightyAdventures.GameZone
             var spawnAreaVerticalCenter = -_spawnAreaHeight * .5f + verticalSpawnPosOffset - spawnAreaHeight * .5f;
             var spawnAreaHorizontalCenter = backgroundPos.x;
             var spawnAreaWidth = (1f - (_offsetWidthPercent + spawnAreaWidthOffset)) * _spawnAreaWidth;
-            gameZoneData.GameZoneBounds = new Bounds(new Vector3(spawnAreaHorizontalCenter, spawnAreaVerticalCenter, spawnDepth),
-                new Vector3(spawnAreaWidth, spawnAreaHeight, _spawnAreaWidth));
+            gameZoneData.SetBounds(new Bounds(new Vector3(spawnAreaHorizontalCenter, spawnAreaVerticalCenter, spawnDepth),
+                new Vector3(spawnAreaWidth, spawnAreaHeight, _spawnAreaWidth)));
         }
 
         #region MonoBehaviour Methods

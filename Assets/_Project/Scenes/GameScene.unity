@@ -854,7 +854,7 @@ MonoBehaviour:
   leftOffsetRectTransform: {fileID: 1797259539}
   rightOffsetRectTransform: {fileID: 477322267}
   gameZoneBackgroundMeshFilter: {fileID: 196481170}
-  backgroundDepth: 5
+  backgroundDepth: 1
   spawnDepth: 0
   verticalSpawnPosOffset: -1
   spawnAreaHeight: 1
@@ -869,6 +869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807093625}
   - component: {fileID: 807093624}
+  - component: {fileID: 807093626}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -910,6 +911,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &807093626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807093623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325568b9a4671e74db6a049ed47bfad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
+  spawnTargetTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2
+      inSlope: -0.059509818
+      outSlope: -0.059509818
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.02852171
+    - serializedVersion: 3
+      time: 10
+      value: 0.3
+      inSlope: -0.18888889
+      outSlope: -0.18888889
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &939444153
 GameObject:
   m_ObjectHideFlags: 0
