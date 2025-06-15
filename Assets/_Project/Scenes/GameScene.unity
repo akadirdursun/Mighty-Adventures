@@ -854,7 +854,7 @@ MonoBehaviour:
   leftOffsetRectTransform: {fileID: 1797259539}
   rightOffsetRectTransform: {fileID: 477322267}
   gameZoneBackgroundMeshFilter: {fileID: 196481170}
-  backgroundDepth: -5
+  backgroundDepth: 5
   spawnDepth: 0
   verticalSpawnPosOffset: -1
   spawnAreaHeight: 1
