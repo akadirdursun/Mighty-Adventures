@@ -1,4 +1,5 @@
 ﻿using System;
+using MightyAdventures.TargetSystem;
 using MightyAdventures.Utilities;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -7,11 +8,11 @@ namespace MightyAdventures.SpawnSystem
 {
     public class ObjectPoolManager : Singleton<ObjectPoolManager>
     {
-        [SerializeField] private ObjectPoolInfo<GameObject>[] objectPools;
+        [SerializeField] private ObjectPoolInfo<AbstractTarget>[] targetPools;
 
         private void Initialize()
         {
-            foreach (var poolInfo in objectPools)
+            foreach (var poolInfo in targetPools)
             {
                 poolInfo.InitializePool();
             }
