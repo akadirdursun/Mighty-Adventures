@@ -8,6 +8,7 @@ namespace MightyAdventures.Gameplay
         [SerializeField] private RectTransform leftOffsetRectTransform;
         [SerializeField] private RectTransform rightOffsetRectTransform;
         [SerializeField] private MeshFilter gameZoneBackgroundMeshFilter;
+        [SerializeField] private float backgroundDepth=-5;
 
         private float _screenHeight;
         private float _screenWidth;
@@ -18,7 +19,7 @@ namespace MightyAdventures.Gameplay
         {
             //https://www.youtube.com/watch?v=8iW2GbWlFWE
             //Measures word space by comparing view port and world space units
-            var viewportPoint = mainCamera.WorldToViewportPoint(new Vector3(1f, 1f, 0f));
+            var viewportPoint = mainCamera.WorldToViewportPoint(new Vector3(1f, 1f, backgroundDepth));
             _screenWidth = 1 / (viewportPoint.x - .5f);
             _screenHeight = 1 / (viewportPoint.y - .5f);
         }
@@ -41,6 +42,7 @@ namespace MightyAdventures.Gameplay
             backgroundTransform.localScale = new Vector3(gameZoneWidth / backgroundSize.x, 1f, _screenHeight / backgroundSize.z);
             var backgroundPos = backgroundTransform.localPosition;
             backgroundPos.x += _horizontalPosOffsetPercent * _screenWidth;
+            backgroundPos.z = backgroundDepth;
             backgroundTransform.localPosition = backgroundPos;
         }
 
