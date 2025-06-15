@@ -850,9 +850,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1372778531}
+  gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
   leftOffsetRectTransform: {fileID: 1797259539}
   rightOffsetRectTransform: {fileID: 477322267}
   gameZoneBackgroundMeshFilter: {fileID: 196481170}
+  backgroundDepth: -5
+  spawnDepth: 0
+  verticalSpawnPosOffset: -1
+  spawnAreaHeight: 1
+  spawnAreaWidthOffset: 0.1
 --- !u!1 &807093623
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +888,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4508303d3f3248f6aa888abaee483436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPools: []
+  targetPools:
+  - objectPrefab: {fileID: 4393670990646055752, guid: 34d2fa632826df04fb672843bb6e71dc, type: 3}
+    startingPoolSize: 2
+    spawnChance: 0.3
+  - objectPrefab: {fileID: 4393670990646055752, guid: b0d493ea8c098004e875bcb415db944d, type: 3}
+    startingPoolSize: 2
+    spawnChance: 0.1
 --- !u!4 &807093625
 Transform:
   m_ObjectHideFlags: 0
