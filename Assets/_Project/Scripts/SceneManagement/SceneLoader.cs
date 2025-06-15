@@ -27,7 +27,14 @@ namespace MightyAdventures.SceneManagement
         {
             if (SceneLoaded(sceneReference)) return;
             var loadSceneAsync = SceneManager.LoadSceneAsync(sceneReference.ScenePath, LoadSceneMode.Additive);
+            onComplete += OnSceneLoadCompleted;
             loadSceneAsync.completed += _ => onComplete?.Invoke();
+
+            void OnSceneLoadCompleted()
+            {
+                var scene = SceneManager.GetSceneByPath(sceneReference.ScenePath);
+                SceneManager.SetActiveScene(scene);
+            }
         }
 
         private void UnloadScene(SceneReference sceneReference)
