@@ -9,10 +9,12 @@ namespace MightyAdventures.GameZone
         [SerializeField] private RectTransform leftOffsetRectTransform;
         [SerializeField] private RectTransform rightOffsetRectTransform;
         [SerializeField] private MeshFilter gameZoneBackgroundMeshFilter;
+        [SerializeField] private BoxCollider targetReleaseZoneCollider;
         [SerializeField] private float backgroundDepth = -5;
         [SerializeField] private float spawnDepth;
         [SerializeField] private float verticalSpawnPosOffset;
         [SerializeField] private float spawnAreaHeight;
+        [SerializeField, Range(1f, 5f)] private float targetReleaseAreaSpacing = 1f;
         [SerializeField, Range(0f, 1f)] private float spawnAreaWidthOffset;
         private float _backgroundHeight;
         private float _backgroundWidth;
@@ -46,6 +48,7 @@ namespace MightyAdventures.GameZone
         private void CalculateGameZone()
         {
             var gameZoneWidth = (1f - _offsetWidthPercent) * _backgroundWidth;
+            //Calculate background size and position
             var backgroundSize = gameZoneBackgroundMeshFilter.mesh.bounds.size;
             var backgroundTransform = gameZoneBackgroundMeshFilter.transform;
             backgroundTransform.localScale = new Vector3(gameZoneWidth / backgroundSize.x, 1f, _backgroundHeight / backgroundSize.z);
@@ -54,11 +57,25 @@ namespace MightyAdventures.GameZone
             backgroundPos.z = backgroundDepth;
             backgroundTransform.localPosition = backgroundPos;
 
-            var spawnAreaVerticalCenter = -_spawnAreaHeight * .5f + verticalSpawnPosOffset - spawnAreaHeight * .5f;
+            //Calculate spawn area
+            var halfOfSpawnHeight = spawnAreaHeight * .5f;
+            var spawnAreaVerticalCenter = -_spawnAreaHeight * .5f + verticalSpawnPosOffset - halfOfSpawnHeight;
             var spawnAreaHorizontalCenter = backgroundPos.x;
             var spawnAreaWidth = (1f - (_offsetWidthPercent + spawnAreaWidthOffset)) * _spawnAreaWidth;
-            gameZoneData.SetBounds(new Bounds(new Vector3(spawnAreaHorizontalCenter, spawnAreaVerticalCenter, spawnDepth),
-                new Vector3(spawnAreaWidth, spawnAreaHeight, _spawnAreaWidth)));
+            var spawnAreaCenter = new Vector3(spawnAreaHorizontalCenter, spawnAreaVerticalCenter, spawnDepth);
+            var spawnAreaSize = new Vector3(spawnAreaWidth, spawnAreaHeight, _spawnAreaWidth);
+            gameZoneData.SetBounds(new Bounds(spawnAreaCenter, spawnAreaSize));
+
+            //Calculate target release area
+            var releaseAreaSize = targetReleaseZoneCollider.size;
+            releaseAreaSize.x = _spawnAreaWidth;
+            releaseAreaSize.z = spawnAreaSize.z;
+            targetReleaseZoneCollider.size = releaseAreaSize;
+
+            var releaseAreaCenter = spawnAreaCenter;
+            var halfOfTargetReleaseAreaHeight = targetReleaseZoneCollider.size.y * .5f;
+            releaseAreaCenter.y -= (targetReleaseAreaSpacing + halfOfSpawnHeight + halfOfTargetReleaseAreaHeight);
+            targetReleaseZoneCollider.center = releaseAreaCenter;
         }
 
         #region MonoBehaviour Methods

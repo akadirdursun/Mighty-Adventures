@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace MightyAdventures.TargetSystem
 {
@@ -10,6 +12,11 @@ namespace MightyAdventures.TargetSystem
         private const float MaxForce = 16f;
         private const float Torque = 12f;
 
+        private Quaternion _defaultRotation;
+
+
+        public Action OnDisable;
+
         public abstract void OnClick();
 
         public void Enable()
@@ -20,6 +27,8 @@ namespace MightyAdventures.TargetSystem
         public void Disable()
         {
             targetRigidbody.isKinematic = true;
+            targetRigidbody.rotation = _defaultRotation;
+            OnDisable?.Invoke();
         }
 
         public void Throw()
@@ -43,5 +52,14 @@ namespace MightyAdventures.TargetSystem
                 }
             }
         }
+
+        #region MonoBehaviour Methods
+
+        private void Start()
+        {
+            _defaultRotation = transform.rotation;
+        }
+
+        #endregion
     }
 }

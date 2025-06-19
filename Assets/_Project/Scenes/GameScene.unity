@@ -835,6 +835,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 196481167}
+  - {fileID: 1255944213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607563456
@@ -854,10 +855,12 @@ MonoBehaviour:
   leftOffsetRectTransform: {fileID: 1797259539}
   rightOffsetRectTransform: {fileID: 477322267}
   gameZoneBackgroundMeshFilter: {fileID: 196481170}
+  targetReleaseZoneCollider: {fileID: 1255944215}
   backgroundDepth: 1
   spawnDepth: 0
   verticalSpawnPosOffset: -1
   spawnAreaHeight: 1
+  targetReleaseAreaSpacing: 1
   spawnAreaWidthOffset: 0.1
 --- !u!1 &807093623
 GameObject:
@@ -1080,6 +1083,72 @@ MonoBehaviour:
   parent: {fileID: 1003688205}
   modelScale: 100
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+--- !u!1 &1255944212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255944213}
+  - component: {fileID: 1255944215}
+  - component: {fileID: 1255944214}
+  m_Layer: 0
+  m_Name: TargetReleaseZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1255944213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255944212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 607563455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255944214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255944212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84d0c0d2f1fd7e44bf4ea61526959e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1255944215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255944212}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1372778529
 GameObject:
   m_ObjectHideFlags: 0

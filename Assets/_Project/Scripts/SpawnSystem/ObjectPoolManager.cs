@@ -17,7 +17,7 @@ namespace MightyAdventures.SpawnSystem
         {
             foreach (var poolInfo in targetPools)
             {
-                poolInfo.InitializePool(GenericOnCreate, GenericOnGet, GenericOnRelease);
+                poolInfo.InitializePool(OnTargetObjectCreate, OnTargetObjectGet, OnTargetObjectReleased);
                 _totalTargetProbability += poolInfo.SpawnChance;
             }
         }
@@ -46,17 +46,23 @@ namespace MightyAdventures.SpawnSystem
 
         #region Pool Methods
 
-        private void GenericOnCreate<T>(T obj, ObjectPool<T> objPool) where T : MonoBehaviour
+        private void OnTargetObjectCreate(AbstractTarget obj, ObjectPool<AbstractTarget> objPool)
         {
             obj.gameObject.SetActive(false);
+            obj.OnDisable += OnTargetDisabled;
+
+            void OnTargetDisabled()
+            {
+                objPool.Release(obj);
+            }
         }
 
-        private void GenericOnGet<T>(T obj) where T : MonoBehaviour
+        private void OnTargetObjectGet(AbstractTarget obj)
         {
             obj.gameObject.SetActive(true);
         }
 
-        private void GenericOnRelease<T>(T obj) where T : MonoBehaviour
+        private void OnTargetObjectReleased(AbstractTarget obj)
         {
             obj.gameObject.SetActive(false);
         }
