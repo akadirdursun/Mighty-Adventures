@@ -17,7 +17,10 @@ namespace MightyAdventures.TargetSystem
 
         public Action OnDisable;
 
-        public abstract void OnClick();
+        public virtual void OnHit()
+        {
+            Disable();
+        }
 
         public void Enable()
         {

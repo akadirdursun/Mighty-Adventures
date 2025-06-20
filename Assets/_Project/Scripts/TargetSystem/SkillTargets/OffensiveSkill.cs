@@ -13,8 +13,9 @@ namespace MightyAdventures.TargetSystem.SkillTargets
 
         private const float CriticalDamageMultiplier = 2f;
 
-        public override void OnClick()
+        public override void OnHit()
         {
+            base.OnHit();
             DamageEnemy();
         }
 

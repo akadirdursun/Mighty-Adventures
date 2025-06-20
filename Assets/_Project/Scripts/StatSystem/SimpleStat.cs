@@ -25,7 +25,6 @@ namespace MightyAdventures.StatSystem
 
         public void ChangeValue(float changeAmount)
         {
-            if (Mathf.Approximately(value, maxValue)) return;
             value = Mathf.Clamp(changeAmount + value, 0, maxValue);
             OnStatChanged?.Invoke();
         }
