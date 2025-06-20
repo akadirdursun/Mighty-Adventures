@@ -12,10 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfb604368a6c1f4fbcae4d78b87abaf, type: 3}
   m_Name: PlayerCharacterData
   m_EditorClassIdentifier: 
-  playerName: 
-  stats:
-    maxHealth: 0
-    healthRegen: 0
-    minDamage: 0
-    maxDamage: 0
-    damageResistance: 0
+  experienceData: {fileID: 11400000, guid: 1e8da9d9048d6a0489f180088d1b3b16, type: 2}
+  characterName: 
+  level: 1
+  experience: 0
+  characterStats:
+    health:
+      value: 0
+      maxValue: 0
+      showMaxValueOnText: 0
+    healthRegen:
+      value: 0
+      maxValue: 0
+      showMaxValueOnText: 0
+    damageResistance:
+      value: 0
+      maxValue: 0
+      showMaxValueOnText: 0
+    damage:
+      minValue: 0
+      maxValue: 0

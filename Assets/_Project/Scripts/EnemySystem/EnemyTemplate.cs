@@ -40,6 +40,6 @@ namespace MightyAdventures.EnemySystem
     {
         public int level;
         public CharacterStats stats;
-        public int experience;
+        public float experience;
     }
 }

@@ -7,12 +7,13 @@ namespace MightyAdventures.CharacterSystem
     [CreateAssetMenu(fileName = "PlayerCharacterData", menuName = "Mighty Adventures/Character System/Player Character Data")]
     public class PlayerCharacterData : ScriptableObject
     {
-        [SerializeField] private string characterName;
+        [SerializeField] private PlayerCharacterExperienceData experienceData;
+        [SerializeField, Space] private string characterName;
         [SerializeField] private int level = 1;
-        [SerializeField] private int experience;
+        [SerializeField] private float experience;
         [SerializeField] private CharacterStats characterStats;
         private PlayerCharacterTemplate _template;
-        private int _targetExperience;
+        private float _targetExperience;
         public string Name => characterName;
         public int Level => level;
         public GameObject CharacterPrefab => _template.Prefab;
@@ -26,18 +27,24 @@ namespace MightyAdventures.CharacterSystem
             characterStats = template.CharacterStats.Clone();
             level = 1;
             experience = 0;
-            //TODO: Set target experience
+            SetTargetExperience();
         }
 
-        public void AddExperience(int experienceToAdd)
+        public void AddExperience(float experienceToAdd)
         {
             experience += experienceToAdd;
-            if (experience >= _targetExperience)
+            do
             {
                 level++;
                 experience -= _targetExperience;
-                //TODO: Set new target experience
-            }
+                SetTargetExperience();
+            } while (experience >= _targetExperience);
+        }
+
+        private void SetTargetExperience()
+        {
+            var targetLevel = ++level;
+            _targetExperience = experienceData.GetExperienceCost(targetLevel);
         }
     }
 }
