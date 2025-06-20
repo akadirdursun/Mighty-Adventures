@@ -35,6 +35,7 @@ namespace MightyAdventures.CharacterSystem
             if (experience >= _targetExperience)
             {
                 level++;
+                experience -= _targetExperience;
                 //TODO: Set new target experience
             }
         }

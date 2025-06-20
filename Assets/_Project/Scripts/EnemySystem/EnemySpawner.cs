@@ -12,7 +12,7 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private SpawnedEnemyData spawnedEnemyData;
         [SerializeField] private EnemyTemplate[] enemyTemplates;
 
-        private void SpawnEnemy()
+        public void SpawnEnemy()
         {
             var maxLevel = playerCharacterData.Level;
             var level = Random.Range(1, maxLevel + 1);

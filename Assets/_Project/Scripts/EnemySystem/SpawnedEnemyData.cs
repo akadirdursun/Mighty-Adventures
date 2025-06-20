@@ -16,7 +16,9 @@ namespace MightyAdventures.EnemySystem
 
         public GameObject Prefab { get; private set; }
 
+        public bool IsAlive => stats.Health.Value > 0;
         public string Name => $"{enemyName} (Lv.{enemyLevel})";
+        public int Experience => experience;
         public CharacterStats Stats => stats;
 
         public void Initialize(string eName, int eLevel, int eExperience, CharacterStats eStats, GameObject ePrefab)
