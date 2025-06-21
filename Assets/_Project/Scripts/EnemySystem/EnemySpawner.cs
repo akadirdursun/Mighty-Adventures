@@ -21,14 +21,5 @@ namespace MightyAdventures.EnemySystem
             selectedEnemy.TryGetLevelInfo(level, out var levelInfo);
             spawnedEnemyData.Initialize(selectedEnemy.Name, level, levelInfo.experience, levelInfo.stats.Clone(), selectedEnemy.Prefab);
         }
-
-        #region MonoBehaviour Methods
-
-        private void Start()
-        {
-            SpawnEnemy();
-        }
-
-        #endregion
     }
 }

@@ -51,7 +51,6 @@ namespace MightyAdventures.SpawnSystem
         {
             _objectPoolManager = ObjectPoolManager.Instance;
             SetSpawnTimer();
-            StartCoroutine(SpawnTargetCoroutine());
         }
 
         private void OnDisable()
