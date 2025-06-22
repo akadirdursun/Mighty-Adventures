@@ -27,7 +27,7 @@ namespace MightyAdventures.StatSystem
 
         public override string GetValueText()
         {
-            return $"{value:F2}";
+            return $"{value:F0}";
         }
 
         public SimpleStat Clone()

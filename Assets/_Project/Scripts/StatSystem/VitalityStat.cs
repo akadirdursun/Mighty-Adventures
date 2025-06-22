@@ -62,7 +62,7 @@ namespace MightyAdventures.StatSystem
 
         public override string GetValueText()
         {
-            return $"{_currentValue:F2}/ {maxValue:F2}";
+            return $"{_currentValue:F0}/ {maxValue:F0}";
         }
 
         public VitalityStat Clone()

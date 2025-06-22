@@ -9,18 +9,21 @@ namespace MightyAdventures.HUD
     {
         [SerializeField] private TMP_Text nameText;
         [Header("Stat Views")]
-        [SerializeField] private VitalStatView healthTextView;
-        [SerializeField] private StatTextView healthRegenTextView;
-        [SerializeField] private StatTextView damageResistanceTextView;
-        [SerializeField] private StatTextView damageTextView;
+        [SerializeField] private VitalStatView healthView;
+        [SerializeField] private RoundStatView damageView;
+        [SerializeField] private RoundStatView damageResistanceView;
+        [SerializeField] private StatTextView attackSpeedView;
+        [SerializeField] private StatTextView attackTokenCount;
 
         protected void Initialize()
         {
             var characterStats = GetCharacterStats();
             nameText.text = GetCharacterName();
-            healthTextView.Initialize(characterStats.Health);
-            damageResistanceTextView.Initialize("Damage Resistance", characterStats.DamageResistance);
-            damageTextView.Initialize("Damage", characterStats.Damage); ;
+            healthView.Initialize(characterStats.Health);
+            damageView.Initialize(characterStats.Damage); ;
+            damageResistanceView.Initialize(characterStats.DamageResistance);
+            attackSpeedView.Initialize("Attack Speed", characterStats.AttackSpeed);
+            attackTokenCount.Initialize("Attack Token Count", characterStats.AttackTokenCount);
         }
         
         protected abstract CharacterStats GetCharacterStats();

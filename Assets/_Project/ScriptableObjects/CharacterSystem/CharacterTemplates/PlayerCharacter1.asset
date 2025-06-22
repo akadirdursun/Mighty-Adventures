@@ -17,15 +17,13 @@ MonoBehaviour:
     health:
       maxValue: 100
       regenRate: 2
-    healthRegen:
-      value: 2
     damageResistance:
       value: 5
     damage:
       minValue: 1
       maxValue: 1
     attackSpeed:
-      value: 0
+      value: 2
     attackTokenCount:
-      value: 0
+      value: 1
   prefab: {fileID: 5900776418649472191, guid: f711847327ed7d34682ba696d4a1c5c5, type: 3}
