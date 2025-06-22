@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace MightyAdventures.GameStates
+namespace MightyAdventures.GameStateSystem
 {
     [CreateAssetMenu(fileName = "GameStateData", menuName = "Mighty Adventures/Game States/Game State Data")]
     public class GameStateData : ScriptableObject
@@ -10,7 +10,7 @@ namespace MightyAdventures.GameStates
 
         private GameStateInfo _currentGameState;
 
-        public void ChangeGameState(GameStates newGameState)
+        public void ChangeGameState(GameStateSystem.GameStates newGameState)
         {
             if (_currentGameState != null)
                 _currentGameState.OnStateExit?.Invoke();
@@ -18,7 +18,7 @@ namespace MightyAdventures.GameStates
             _currentGameState.OnStateEnter?.Invoke();
         }
 
-        public GameStateInfo GetStateInfo(GameStates gameState)
+        public GameStateInfo GetStateInfo(GameStateSystem.GameStates gameState)
         {
             return gamesStates.First(stateInfo => stateInfo.State == gameState);
         }

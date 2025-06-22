@@ -1,4 +1,4 @@
-﻿namespace MightyAdventures.GameStates
+﻿namespace MightyAdventures.GameStateSystem
 {
     public enum GameStates
     {

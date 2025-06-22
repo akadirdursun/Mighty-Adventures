@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MightyAdventures.GameStates
+namespace MightyAdventures.GameStateSystem
 {
     [Serializable]
     public class GameStateInfo
     {
-        [SerializeField] private GameStates state;
+        [SerializeField] private GameStateSystem.GameStates state;
         public Action OnStateEnter;
         public Action OnStateExit;
 
-        public GameStates State => state;
+        public GameStateSystem.GameStates State => state;
     }
 }
