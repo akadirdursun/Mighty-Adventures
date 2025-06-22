@@ -799,6 +799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 525631708}
   - component: {fileID: 525631709}
+  - component: {fileID: 525631710}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -833,12 +834,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b44ed3fac57b84ea7a1c544910be7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
   enemyTemplates:
   - {fileID: 11400000, guid: bdad9638e73105847bf3c92d02cecd47, type: 2}
   - {fileID: 11400000, guid: a6e4ed3e0da8892469061c3295271ff5, type: 2}
   - {fileID: 11400000, guid: 73a6e257221cc69438b0d0faf8bb88a0, type: 2}
+--- !u!114 &525631710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525631707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb62b626d172ecc4585d23cfec9a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
+  listenedGameState: 1
+  gameStateEnterResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 525631709}
+        m_TargetAssemblyTypeName: MightyAdventures.EnemySystem.EnemySpawner, Assembly-CSharp
+        m_MethodName: SpawnEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameStateExitResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &543848951 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3479893287827063293, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
@@ -919,8 +953,9 @@ GameObject:
   - component: {fileID: 807093625}
   - component: {fileID: 807093624}
   - component: {fileID: 807093626}
+  - component: {fileID: 807093627}
   m_Layer: 0
-  m_Name: ObjectSpawner
+  m_Name: TargetSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1007,6 +1042,50 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &807093627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807093623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb62b626d172ecc4585d23cfec9a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
+  listenedGameState: 1
+  gameStateEnterResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 807093626}
+        m_TargetAssemblyTypeName: MightyAdventures.SpawnSystem.TargetSpawner, Assembly-CSharp
+        m_MethodName: ActivateTargetSpawner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameStateExitResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 807093626}
+        m_TargetAssemblyTypeName: MightyAdventures.SpawnSystem.TargetSpawner, Assembly-CSharp
+        m_MethodName: DeactivateTargetSpawner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &810040816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925644972}
   - component: {fileID: 925644971}
+  - component: {fileID: 925644973}
   m_Layer: 0
   m_Name: InputStateController
   m_TagString: Untagged
@@ -1099,6 +1179,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &925644973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925644970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb62b626d172ecc4585d23cfec9a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
+  listenedGameState: 1
+  gameStateEnterResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 925644971}
+        m_TargetAssemblyTypeName: MightyAdventures.InputSystem.InputStateController,
+          Assembly-CSharp
+        m_MethodName: EnableGameplayInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameStateExitResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 925644971}
+        m_TargetAssemblyTypeName: MightyAdventures.InputSystem.InputStateController,
+          Assembly-CSharp
+        m_MethodName: DisableGameplayInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &939444153
 GameObject:
   m_ObjectHideFlags: 0

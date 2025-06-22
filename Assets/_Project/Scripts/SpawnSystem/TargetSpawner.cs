@@ -14,6 +14,20 @@ namespace MightyAdventures.SpawnSystem
         private ObjectPoolManager _objectPoolManager;
 
         private float _spawnTimer;
+        private Coroutine _spawnCoroutine;
+
+        public void ActivateTargetSpawner()
+        {
+            if (_spawnCoroutine != null) return;
+            _spawnCoroutine = StartCoroutine(SpawnTargetCoroutine());
+        }
+
+        public void DeactivateTargetSpawner()
+        {
+            if (_spawnCoroutine == null) return;
+            StopCoroutine(_spawnCoroutine);
+            _spawnCoroutine = null;
+        }
 
         private void SpawnTarget()
         {

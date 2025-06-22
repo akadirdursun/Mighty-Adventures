@@ -27,5 +27,10 @@ namespace MightyAdventures.GameStateSystem
         {
             return gamesStates.First(stateInfo => stateInfo.State == gameState);
         }
+
+        public bool IsGameState(GameStates state)
+        {
+            return _currentGameState.State == state;
+        }
     }
 }
