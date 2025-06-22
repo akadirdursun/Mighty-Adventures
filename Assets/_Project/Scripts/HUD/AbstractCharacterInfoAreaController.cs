@@ -9,7 +9,7 @@ namespace MightyAdventures.HUD
     {
         [SerializeField] private TMP_Text nameText;
         [Header("Stat Views")]
-        [SerializeField] private StatTextView healthTextView;
+        [SerializeField] private VitalStatView healthTextView;
         [SerializeField] private StatTextView healthRegenTextView;
         [SerializeField] private StatTextView damageResistanceTextView;
         [SerializeField] private StatTextView damageTextView;
@@ -18,8 +18,7 @@ namespace MightyAdventures.HUD
         {
             var characterStats = GetCharacterStats();
             nameText.text = GetCharacterName();
-            healthTextView.Initialize("Health", characterStats.Health);
-            healthRegenTextView.Initialize("Health Regen", characterStats.HealthRegen, "/s");
+            healthTextView.Initialize(characterStats.Health);
             damageResistanceTextView.Initialize("Damage Resistance", characterStats.DamageResistance);
             damageTextView.Initialize("Damage", characterStats.Damage);
             SetExtraAreas();

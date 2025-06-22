@@ -8,17 +8,22 @@ namespace MightyAdventures.StatSystem
     {
         #region Constructors
 
-        public VitalityStat(float maxValue)
+        public VitalityStat(float maxValue, float regenRate)
         {
             this.maxValue = maxValue;
+            this.regenRate = regenRate;
             _currentValue = this.maxValue;
         }
 
         #endregion
 
         [SerializeField] private float maxValue;
+        [SerializeField] private float regenRate;
         private float _currentValue;
         public override float Value => _currentValue;
+        public float MaxValue => maxValue;
+        public bool IsFull => _currentValue == maxValue;
+        public float RegenRage => regenRate;
         public Action OnVitalDropToZero;
 
         public void IncreaseMaxValue(float additionValue)
@@ -43,10 +48,16 @@ namespace MightyAdventures.StatSystem
 
         public void DecreaseCurrentValue(float removedValue)
         {
-            _currentValue = Mathf.Clamp(_currentValue + removedValue, 0, maxValue);
+            _currentValue = Mathf.Clamp(_currentValue - removedValue, 0, maxValue);
             OnStatChanged?.Invoke();
             if (_currentValue > 0) return;
             OnVitalDropToZero?.Invoke();
+        }
+
+        public void SetRegenRate(float newRegenRate)
+        {
+            regenRate = newRegenRate;
+            OnStatChanged?.Invoke();
         }
 
         public override string GetValueText()
@@ -56,7 +67,7 @@ namespace MightyAdventures.StatSystem
 
         public VitalityStat Clone()
         {
-            return new VitalityStat(maxValue);
+            return new VitalityStat(maxValue, regenRate);
         }
     }
 }
