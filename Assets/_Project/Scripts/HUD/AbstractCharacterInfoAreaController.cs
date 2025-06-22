@@ -20,7 +20,7 @@ namespace MightyAdventures.HUD
             nameText.text = GetCharacterName();
             healthTextView.Initialize("Health", characterStats.Health);
             healthRegenTextView.Initialize("Health Regen", characterStats.HealthRegen, "/s");
-            damageResistanceTextView.Initialize("Damage Resistance", characterStats.DamageResistance, "%");
+            damageResistanceTextView.Initialize("Damage Resistance", characterStats.DamageResistance);
             damageTextView.Initialize("Damage", characterStats.Damage);
             SetExtraAreas();
         }

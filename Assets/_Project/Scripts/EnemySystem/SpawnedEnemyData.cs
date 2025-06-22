@@ -33,7 +33,7 @@ namespace MightyAdventures.EnemySystem
 
         public void Damage(float damage)
         {
-            stats.Health.ChangeValue(-damage);
+            stats.Health.DecreaseCurrentValue(damage);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace MightyAdventures.StatSystem.UI
         {
             statInfoText.text = $"Health: {characterStats.Health.GetValueText()}" +
                                 $"\nHealth Regen: {characterStats.HealthRegen.GetValueText()}/s" +
-                                $"\nDamage Resistance: {characterStats.DamageResistance.GetValueText()}%" +
+                                $"\nDamage Resistance: {characterStats.DamageResistance.GetValueText()}" +
                                 $"\nDamage: {characterStats.Damage.GetValueText()}";
         }
     }

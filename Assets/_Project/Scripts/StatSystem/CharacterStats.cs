@@ -8,7 +8,7 @@ namespace MightyAdventures.StatSystem
     {
         #region Constructors
 
-        public CharacterStats(SimpleStat health, SimpleStat healthRegen, SimpleStat damageResistance, IntervalStat damage)
+        public CharacterStats(VitalityStat health, SimpleStat healthRegen, PercentileStat damageResistance, IntervalStat damage)
         {
             this.health = health;
             this.healthRegen = healthRegen;
@@ -18,14 +18,14 @@ namespace MightyAdventures.StatSystem
 
         #endregion
 
-        [SerializeField] private SimpleStat health;
+        [SerializeField] private VitalityStat health;
         [SerializeField] private SimpleStat healthRegen;
-        [SerializeField] private SimpleStat damageResistance;
+        [SerializeField] private PercentileStat damageResistance;
         [SerializeField] private IntervalStat damage;
 
-        public SimpleStat Health => health;
+        public VitalityStat Health => health;
         public SimpleStat HealthRegen => healthRegen;
-        public SimpleStat DamageResistance => damageResistance;
+        public PercentileStat DamageResistance => damageResistance;
         public IntervalStat Damage => damage;
 
 
