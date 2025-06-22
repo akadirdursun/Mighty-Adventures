@@ -18,17 +18,14 @@ MonoBehaviour:
   experience: 0
   characterStats:
     health:
-      value: 0
       maxValue: 0
-      showMaxValueOnText: 0
-    healthRegen:
-      value: 0
-      maxValue: 0
-      showMaxValueOnText: 0
+      regenRate: 0
     damageResistance:
       value: 0
-      maxValue: 0
-      showMaxValueOnText: 0
     damage:
       minValue: 0
       maxValue: 0
+    attackSpeed:
+      value: 0
+    attackTokenCount:
+      value: 0

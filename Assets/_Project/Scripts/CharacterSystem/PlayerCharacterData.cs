@@ -16,9 +16,12 @@ namespace MightyAdventures.CharacterSystem
         private float _targetExperience;
         public string Name => characterName;
         public int Level => level;
+        public float TargetExperience => _targetExperience;
+        public float CurrentExperience => experience;
         public GameObject CharacterPrefab => _template.Prefab;
         public CharacterStats CharacterStats => characterStats;
         public Action OnCharacterLevelChanged;
+        public Action OnCharacterExperienceChanged;
 
         public void InitializePlayerCharacter(PlayerCharacterTemplate template)
         {
@@ -33,12 +36,14 @@ namespace MightyAdventures.CharacterSystem
         public void AddExperience(float experienceToAdd)
         {
             experience += experienceToAdd;
-            do
+            OnCharacterExperienceChanged?.Invoke();
+            while (experience >= _targetExperience)
             {
                 level++;
                 experience -= _targetExperience;
                 SetTargetExperience();
-            } while (experience >= _targetExperience);
+                OnCharacterLevelChanged?.Invoke();
+            }
         }
 
         private void SetTargetExperience()
