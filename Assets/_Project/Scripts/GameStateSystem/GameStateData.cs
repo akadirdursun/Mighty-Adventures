@@ -10,7 +10,12 @@ namespace MightyAdventures.GameStateSystem
 
         private GameStateInfo _currentGameState;
 
-        public void ChangeGameState(GameStateSystem.GameStates newGameState)
+        public void Initialize()
+        {
+            ChangeGameState(GameStates.IdleState);
+        }
+
+        public void ChangeGameState(GameStates newGameState)
         {
             if (_currentGameState != null)
                 _currentGameState.OnStateExit?.Invoke();
@@ -18,7 +23,7 @@ namespace MightyAdventures.GameStateSystem
             _currentGameState.OnStateEnter?.Invoke();
         }
 
-        public GameStateInfo GetStateInfo(GameStateSystem.GameStates gameState)
+        public GameStateInfo GetStateInfo(GameStates gameState)
         {
             return gamesStates.First(stateInfo => stateInfo.State == gameState);
         }
