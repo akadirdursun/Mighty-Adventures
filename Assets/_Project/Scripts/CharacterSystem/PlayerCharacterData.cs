@@ -36,12 +36,14 @@ namespace MightyAdventures.CharacterSystem
         public void AddExperience(float experienceToAdd)
         {
             experience += experienceToAdd;
-            do
+            OnCharacterExperienceChanged?.Invoke();
+            while (experience >= _targetExperience)
             {
                 level++;
                 experience -= _targetExperience;
                 SetTargetExperience();
-            } while (experience >= _targetExperience);
+                OnCharacterLevelChanged?.Invoke();
+            }
         }
 
         private void SetTargetExperience()
