@@ -585,6 +585,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VitalStatViewArea
       objectReference: {fileID: 0}
+    - target: {fileID: 3119111190484786284, guid: 7c73eae620eeef846987fd864c395de3, type: 3}
+      propertyPath: m_Name
+      value: 'RegenRateValueText (TMP) '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246465668203660725, guid: 7c73eae620eeef846987fd864c395de3, type: 3}
+      propertyPath: m_Name
+      value: StatValueText (TMP)
+      objectReference: {fileID: 0}
     - target: {fileID: 6662229251208918421, guid: 7c73eae620eeef846987fd864c395de3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
