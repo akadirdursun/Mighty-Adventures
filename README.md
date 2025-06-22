@@ -38,3 +38,5 @@
 - **Health Regen:** Per sec
 - **Damage:** Min ~ Max value
 - **Damage Resistance:** Percent Value (**%**)
+- **Attack Speed**: Determines the spawning of target attack tokens
+- **Attack Token Count**: Increase the count of spawning attack tokens
