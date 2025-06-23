@@ -14,10 +14,11 @@ namespace MightyAdventures.StatSystem
         }
 
         #endregion
-        
+
         [SerializeField, Range(0f, 95f)] private float value;
         private const float MaxPercentage = 95f;
         public override float Value => value;
+        public float PercentValue => value / 100f;
 
         public void ChangeValue(float changeAmount)
         {

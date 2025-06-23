@@ -54,7 +54,8 @@ namespace MightyAdventures.CharacterSystem
 
         public void Damage(float damageTaken)
         {
-            playerCharacterStats.Health.DecreaseCurrentValue(damageTaken);
+            var resistanceAmount = damageTaken * playerCharacterStats.DamageResistance.PercentValue;
+            playerCharacterStats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
         }
     }
 }
