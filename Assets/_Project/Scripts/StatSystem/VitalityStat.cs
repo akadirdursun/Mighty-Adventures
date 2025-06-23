@@ -54,6 +54,11 @@ namespace MightyAdventures.StatSystem
             OnVitalDropToZero?.Invoke();
         }
 
+        public void RegenVitality()
+        {
+            IncreaseCurrentValue(regenRate);
+        }
+
         public void SetRegenRate(float newRegenRate)
         {
             regenRate = newRegenRate;
