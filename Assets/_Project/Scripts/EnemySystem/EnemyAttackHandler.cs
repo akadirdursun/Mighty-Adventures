@@ -1,3 +1,5 @@
+using System.Collections;
+using MightyAdventures.CharacterSystem;
 using UnityEngine;
 
 namespace MightyAdventures.EnemySystem
@@ -5,5 +7,41 @@ namespace MightyAdventures.EnemySystem
     public class EnemyAttackHandler : MonoBehaviour
     {
         [SerializeField] private SpawnedEnemyData spawnedEnemyData;
+        [SerializeField] private PlayerCharacterData playerCharacterData;
+
+        private Coroutine _attackCoroutine;
+
+        private void StartAttackCoroutine()
+        {
+            if (_attackCoroutine != null)
+            {
+                StopCoroutine(_attackCoroutine);
+            }
+
+            _attackCoroutine = StartCoroutine(AttackRoutine());
+        }
+
+        private IEnumerator AttackRoutine()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(spawnedEnemyData.Stats.AttackSpeed.Value);
+                playerCharacterData.Damage(spawnedEnemyData.Stats.Damage.Value);
+            }
+        }
+
+        #region MonoBehaviour Methods
+
+        private void OnEnable()
+        {
+            spawnedEnemyData.OnSpawnedEnemyChanged += StartAttackCoroutine;
+        }
+
+        private void OnDisable()
+        {
+            spawnedEnemyData.OnSpawnedEnemyChanged -= StartAttackCoroutine;
+        }
+
+        #endregion
     }
 }

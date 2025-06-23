@@ -31,9 +31,9 @@ namespace MightyAdventures.EnemySystem
             OnSpawnedEnemyChanged?.Invoke();
         }
 
-        public void Damage(float damage)
+        public void Damage(float damageTaken)
         {
-            stats.Health.DecreaseCurrentValue(damage);
+            stats.Health.DecreaseCurrentValue(damageTaken);
         }
     }
 }
