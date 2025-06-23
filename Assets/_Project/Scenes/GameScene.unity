@@ -448,7 +448,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1670259110}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &807093626
@@ -465,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
+  targetPoolManager: {fileID: 807093624}
 --- !u!114 &807093627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +823,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1670259109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670259110}
+  - component: {fileID: 1670259111}
+  - component: {fileID: 1670259112}
+  m_Layer: 0
+  m_Name: EnemyTrapHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670259110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670259109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 807093625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670259111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670259109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1f9ed5ee5d4375a14c88de3e7a2ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 7791280310182146020, guid: b8d91c1291294674a86d64cc73f3f7f1, type: 3}
+  startingPoolSize: 1
+--- !u!114 &1670259112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670259109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5776444c5521b9946a46395a622cf58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
+  gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
+  trapPoolManager: {fileID: 1670259111}
 --- !u!224 &1797259539 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7968458649309475772, guid: e21f267afd9b25d479fc1fcee1086ab9, type: 3}

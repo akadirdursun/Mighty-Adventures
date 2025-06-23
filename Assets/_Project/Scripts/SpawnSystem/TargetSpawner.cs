@@ -9,7 +9,7 @@ namespace MightyAdventures.SpawnSystem
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
         [SerializeField] private GameZoneData gameZoneData;
-        private ObjectPoolManager _objectPoolManager;
+        [SerializeField] private AbstractTargetPoolManager targetPoolManager;
 
         private float _spawnTimer;
         private Coroutine _spawnCoroutine;
@@ -32,7 +32,7 @@ namespace MightyAdventures.SpawnSystem
             var spawnTokenCunt = playerCharacterData.PlayerCharacterStats.MaxSkillTokenCount.Value;
             for (int i = 0; i < spawnTokenCunt; i++)
             {
-                var target = _objectPoolManager.GetRandomTarget();
+                var target = targetPoolManager.GetTarget();
                 var spawnPos = gameZoneData.GetRandomPositionInBounds();
                 target.transform.position = spawnPos;
                 target.Enable();
@@ -63,7 +63,6 @@ namespace MightyAdventures.SpawnSystem
 
         private void Start()
         {
-            _objectPoolManager = ObjectPoolManager.Instance;
             SetSpawnTimer();
         }
 

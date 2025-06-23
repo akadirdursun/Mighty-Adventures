@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace MightyAdventures.SpawnSystem
 {
-    public class ObjectPoolManager : AbstractTargetPoolManager
+    public class MultipleObjectPoolManager : AbstractTargetPoolManager
     {
         [SerializeField] private ObjectPoolInfo<AbstractTarget>[] targetPools;
 
