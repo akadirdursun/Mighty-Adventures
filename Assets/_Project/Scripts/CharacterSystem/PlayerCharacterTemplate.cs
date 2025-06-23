@@ -7,12 +7,12 @@ namespace MightyAdventures.CharacterSystem
     public class PlayerCharacterTemplate : ScriptableObject
     {
         [SerializeField] private string characterName = "Mighty Adventurer";
-        [SerializeField] private CharacterStats characterStats;
+        [SerializeField] private PlayerCharacterStats playerCharacterStats;
         [SerializeField] private GameObject prefab;
             
 
         public string CharacterName => characterName;
-        public CharacterStats CharacterStats => characterStats;
+        public PlayerCharacterStats PlayerCharacterStats => playerCharacterStats;
         public GameObject Prefab => prefab;
     }
 }

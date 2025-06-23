@@ -175,6 +175,10 @@ MonoBehaviour:
     m_SceneAsset: {fileID: 102900000, guid: 3541c0e016a6ef14d917b3df9b16b630, type: 3}
     m_IsDirty: 0
     m_ScenePath: Assets/_Project/Scenes/UIScreens.unity
+  characterPortraitScene:
+    m_SceneAsset: {fileID: 102900000, guid: bc37b38f4250e234d917bfd9e897f5c2, type: 3}
+    m_IsDirty: 0
+    m_ScenePath: Assets/_Project/Scenes/CharacterPortraitScene.unity
 --- !u!1 &1396236146
 GameObject:
   m_ObjectHideFlags: 0

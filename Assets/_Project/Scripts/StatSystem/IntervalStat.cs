@@ -24,7 +24,7 @@ namespace MightyAdventures.StatSystem
 
         public override string GetValueText()
         {
-            return $"{minValue} ~ {maxValue}";
+            return $"{minValue:F0} ~ {maxValue:F0}";
         }
 
         public IntervalStat Clone()

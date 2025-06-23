@@ -11,17 +11,20 @@ namespace MightyAdventures.SceneManagement
         [SerializeField] private SceneReference mainMenuScene;
         [SerializeField] private SceneReference gameScene;
         [SerializeField] private SceneReference screenScene;
+        [SerializeField] private SceneReference characterPortraitScene;
 
         public void ReturnToMainMenu()
         {
             UnloadScene(gameScene);
             UnloadScene(screenScene);
+            UnloadScene(characterPortraitScene);
             LoadScene(mainMenuScene);
         }
 
         public void LoadGameScene()
         {
             UnloadScene(mainMenuScene);
+            LoadScene(characterPortraitScene);
             LoadScene(screenScene);
             LoadScene(gameScene);
         }

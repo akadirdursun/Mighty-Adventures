@@ -13,20 +13,17 @@ MonoBehaviour:
   m_Name: PlayerCharacter2
   m_EditorClassIdentifier: 
   characterName: Mighty Adventurer 2
-  characterStats:
+  playerCharacterStats:
     health:
-      value: 75
       maxValue: 75
-      showMaxValueOnText: 1
-    healthRegen:
-      value: 2
-      maxValue: 999999
-      showMaxValueOnText: 0
-    damage:
-      minValue: 1
-      maxValue: 1
+      regenRate: 2
     damageResistance:
-      value: 5
-      maxValue: 100
-      showMaxValueOnText: 0
+      value: 0
+    damage:
+      minValue: 3
+      maxValue: 3
+    attackSpeed:
+      value: 2
+    maxSkillTokenCount:
+      value: 4
   prefab: {fileID: 5900776418649472191, guid: 30cd795794fdabc4f97b1cd6460b73d3, type: 3}

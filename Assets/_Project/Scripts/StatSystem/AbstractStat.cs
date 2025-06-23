@@ -10,5 +10,7 @@ namespace MightyAdventures.StatSystem
         public abstract float Value { get; }
 
         public abstract string GetValueText();
+        
+        //public abstract AbstractStat Clone();
     }
 }

@@ -18,54 +18,96 @@ MonoBehaviour:
   - level: 1
     stats:
       health:
-        value: 10
         maxValue: 10
-        showMaxValueOnText: 1
-      healthRegen:
-        value: 0
-        maxValue: 0
-        showMaxValueOnText: 0
+        regenRate: 0
       damageResistance:
         value: 0
-        maxValue: 0
-        showMaxValueOnText: 0
       damage:
-        minValue: 2
+        minValue: 1
         maxValue: 2
+      attackSpeed:
+        value: 2
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    stat:
+      health:
+        maxValue: 10
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 2
+      attackSpeed:
+        value: 2
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
     experience: 2
   - level: 2
     stats:
       health:
-        value: 15
         maxValue: 15
-        showMaxValueOnText: 1
-      healthRegen:
-        value: 1
-        maxValue: 1
-        showMaxValueOnText: 0
+        regenRate: 0
       damageResistance:
         value: 0
-        maxValue: 0
-        showMaxValueOnText: 0
       damage:
-        minValue: 3
+        minValue: 1
         maxValue: 3
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    stat:
+      health:
+        maxValue: 15
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 3
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
     experience: 4
   - level: 3
     stats:
       health:
-        value: 20
         maxValue: 20
-        showMaxValueOnText: 1
-      healthRegen:
-        value: 2
-        maxValue: 2
-        showMaxValueOnText: 0
+        regenRate: 0
       damageResistance:
         value: 0
-        maxValue: 0
-        showMaxValueOnText: 0
       damage:
-        minValue: 5
+        minValue: 3
         maxValue: 5
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 5
+      maxTrapSpawnCount:
+        value: 1
+    stat:
+      health:
+        maxValue: 20
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 3
+        maxValue: 5
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 5
+      maxTrapSpawnCount:
+        value: 1
     experience: 8
