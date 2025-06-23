@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MightyAdventures.EnemySystem
 {
-    public class EnemyHealerHandler : MonoBehaviour
+    public class EnemyHealthRegenHandler : MonoBehaviour
     {
         [SerializeField] protected SpawnedEnemyData spawnedEnemyData;
 

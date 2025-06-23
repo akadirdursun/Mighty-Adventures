@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MightyAdventures.CharacterSystem
 {
-    public class CharacterHealer : MonoBehaviour
+    public class PlayerCharacterHealthRegenHandler : MonoBehaviour
     {
         [SerializeField] protected PlayerCharacterData playerCharacterData;
 
