@@ -29,7 +29,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void SpawnTarget()
         {
-            var spawnTokenCunt = playerCharacterData.CharacterStats.AttackTokenCount.Value;
+            var spawnTokenCunt = playerCharacterData.PlayerCharacterStats.MaxSkillTokenCount.Value;
             for (int i = 0; i < spawnTokenCunt; i++)
             {
                 var target = _objectPoolManager.GetRandomTarget();
@@ -51,7 +51,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void SetSpawnTimer()
         {
-            _spawnTimer = playerCharacterData.CharacterStats.AttackSpeed.Value;
+            _spawnTimer = playerCharacterData.PlayerCharacterStats.AttackSpeed.Value;
         }
 
         #region MonoBehaviour Methods

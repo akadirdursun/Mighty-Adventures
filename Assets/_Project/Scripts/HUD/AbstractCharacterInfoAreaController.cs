@@ -23,10 +23,10 @@ namespace MightyAdventures.HUD
             damageView.Initialize(characterStats.Damage); ;
             damageResistanceView.Initialize(characterStats.DamageResistance);
             attackSpeedView.Initialize("Attack Speed", characterStats.AttackSpeed);
-            attackTokenCount.Initialize("Attack Token Count", characterStats.AttackTokenCount);
+            attackTokenCount.Initialize("Attack Token Count", characterStats.MaxSkillTokenCount);
         }
         
-        protected abstract CharacterStats GetCharacterStats();
+        protected abstract PlayerCharacterStats GetCharacterStats();
         protected abstract string GetCharacterName();
     }
 }

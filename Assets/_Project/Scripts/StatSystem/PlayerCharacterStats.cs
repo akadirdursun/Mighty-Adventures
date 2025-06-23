@@ -4,47 +4,47 @@ using UnityEngine;
 namespace MightyAdventures.StatSystem
 {
     [Serializable]
-    public class CharacterStats
+    public class PlayerCharacterStats
     {
         #region Constructors
 
-        public CharacterStats(
+        public PlayerCharacterStats(
             VitalityStat health, 
-            PercentileStat damageResistance, 
             IntervalStat damage,
+            PercentileStat damageResistance, 
             SimpleStat attackSpeed,
-            SimpleStat attackTokenCount)
+            SimpleStat maxSkillTokenCount)
         {
             this.health = health;
-            this.damageResistance = damageResistance;
             this.damage = damage;
+            this.damageResistance = damageResistance;
             this.attackSpeed = attackSpeed;
-            this.attackTokenCount = attackTokenCount;
+            this.maxSkillTokenCount = maxSkillTokenCount;
         }
 
         #endregion
 
         [SerializeField] private VitalityStat health;
-        [SerializeField] private PercentileStat damageResistance;
         [SerializeField] private IntervalStat damage;
+        [SerializeField] private PercentileStat damageResistance;
         [SerializeField] private SimpleStat attackSpeed;
-        [SerializeField] private SimpleStat attackTokenCount;
+        [SerializeField] private SimpleStat maxSkillTokenCount;
 
         public VitalityStat Health => health;
-        public PercentileStat DamageResistance => damageResistance;
         public IntervalStat Damage => damage;
+        public PercentileStat DamageResistance => damageResistance;
         public SimpleStat AttackSpeed => attackSpeed;
-        public SimpleStat AttackTokenCount => attackTokenCount;
+        public SimpleStat MaxSkillTokenCount => maxSkillTokenCount;
 
 
-        public CharacterStats Clone()
+        public PlayerCharacterStats Clone()
         {
-            return new CharacterStats(
+            return new PlayerCharacterStats(
                 health.Clone(), 
-                damageResistance.Clone(), 
                 damage.Clone(), 
+                damageResistance.Clone(), 
                 attackSpeed.Clone(),
-                attackTokenCount.Clone());
+                maxSkillTokenCount.Clone());
         }
     }
 }

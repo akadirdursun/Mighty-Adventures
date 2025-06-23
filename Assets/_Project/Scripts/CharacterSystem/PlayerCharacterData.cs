@@ -11,7 +11,7 @@ namespace MightyAdventures.CharacterSystem
         [SerializeField, Space] private string characterName;
         [SerializeField] private int level = 1;
         [SerializeField] private float experience;
-        [SerializeField] private CharacterStats characterStats;
+        [SerializeField] private PlayerCharacterStats playerCharacterStats;
         private PlayerCharacterTemplate _template;
         private float _targetExperience;
         public string Name => characterName;
@@ -19,7 +19,7 @@ namespace MightyAdventures.CharacterSystem
         public float TargetExperience => _targetExperience;
         public float CurrentExperience => experience;
         public GameObject CharacterPrefab => _template.Prefab;
-        public CharacterStats CharacterStats => characterStats;
+        public PlayerCharacterStats PlayerCharacterStats => playerCharacterStats;
         public Action OnCharacterLevelChanged;
         public Action OnCharacterExperienceChanged;
 
@@ -27,7 +27,7 @@ namespace MightyAdventures.CharacterSystem
         {
             _template = template;
             characterName = template.CharacterName;
-            characterStats = template.CharacterStats.Clone();
+            playerCharacterStats = template.PlayerCharacterStats.Clone();
             level = 1;
             experience = 0;
             SetTargetExperience();

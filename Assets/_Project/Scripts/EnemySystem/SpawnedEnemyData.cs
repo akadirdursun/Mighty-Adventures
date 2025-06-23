@@ -10,7 +10,7 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private string enemyName;
         [SerializeField] private int enemyLevel;
         [SerializeField] private float experience;
-        [SerializeField] private CharacterStats stats;
+        [SerializeField] private EnemyCharacterStats stats;
 
         public Action OnSpawnedEnemyChanged;
 
@@ -19,9 +19,9 @@ namespace MightyAdventures.EnemySystem
         public bool IsAlive => stats.Health.Value > 0;
         public string Name => $"{enemyName} (Lv.{enemyLevel})";
         public float Experience => experience;
-        public CharacterStats Stats => stats;
+        public EnemyCharacterStats Stats => stats;
 
-        public void Initialize(string eName, int eLevel, float eExperience, CharacterStats eStats, GameObject ePrefab)
+        public void Initialize(string eName, int eLevel, float eExperience, EnemyCharacterStats eStats, GameObject ePrefab)
         {
             enemyName = eName;
             enemyLevel = eLevel;

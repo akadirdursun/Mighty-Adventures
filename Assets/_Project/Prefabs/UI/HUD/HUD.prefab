@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779866874183551408, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
+      propertyPath: m_Name
+      value: TrapSpawnChanceView
+      objectReference: {fileID: 0}
     - target: {fileID: 2696935120268054613, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
       propertyPath: m_Texture
       value: 
@@ -541,7 +545,10 @@ PrefabInstance:
     - {fileID: 6011386831900378124, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
     - {fileID: 8700940284862654524, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8588863346452819259, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6406000885631969177}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8503441239727557438, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
       insertIndex: -1
@@ -596,6 +603,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e201052f24f844ea8bf3d3c4c9aae86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5644902213457922307 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8588863346452819259, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
+  m_PrefabInstance: {fileID: 4136412301396321336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5721040283489464070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8503441239727557438, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
@@ -613,13 +625,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a7cf1e6bdc4d63a93034fedd810da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
   nameText: {fileID: 661023712714843589}
   healthView: {fileID: 1226546436461992605}
   damageView: {fileID: 2136721638989257492}
   damageResistanceView: {fileID: 8184989017771867618}
   attackSpeedView: {fileID: 1019133935399482413}
-  attackTokenCount: {fileID: 6447884282133699500}
-  spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
+  trapSpawnChanceView: {fileID: 6447884282133699500}
+  maxTrapSpawnCountView: {fileID: 6907080013109077597}
 --- !u!114 &6447884282133699500 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6925411998002839444, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
@@ -640,6 +653,119 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e201052f24f844ea8bf3d3c4c9aae86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5683362089658701866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5644902213457922307}
+    m_Modifications:
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614146475224434771, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+      propertyPath: m_Name
+      value: TrapCountView
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+--- !u!224 &6406000885631969177 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1601579870136647603, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+  m_PrefabInstance: {fileID: 5683362089658701866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6907080013109077597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1226592186566868599, guid: d39ad3c99217dc34db447ee37c7a7e8a, type: 3}
+  m_PrefabInstance: {fileID: 5683362089658701866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbce5727c8342fe87d1f2a3b4122cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6046958110719525261
@@ -993,13 +1119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d051b0f4b49cc49bef9df393963de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   nameText: {fileID: 7933577935498484926}
   healthView: {fileID: 8516386017093051366}
   damageView: {fileID: 8832402792512594543}
   damageResistanceView: {fileID: 1631212004708058265}
   attackSpeedView: {fileID: 7570945026477378902}
   attackTokenCount: {fileID: 4489712925138658007}
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
 --- !u!114 &4489712925138658007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6925411998002839444, guid: 9c5950c866f8191418c9ff2c94fd7225, type: 3}
