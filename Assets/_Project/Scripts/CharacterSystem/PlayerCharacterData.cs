@@ -48,7 +48,7 @@ namespace MightyAdventures.CharacterSystem
 
         private void SetTargetExperience()
         {
-            var targetLevel = ++level;
+            var targetLevel = level + 1;
             _targetExperience = experienceData.GetExperienceCost(targetLevel);
         }
     }
