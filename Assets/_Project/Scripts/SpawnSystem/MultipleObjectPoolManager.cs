@@ -7,13 +7,13 @@ using Object = UnityEngine.Object;
 
 namespace MightyAdventures.SpawnSystem
 {
-    public class ObjectPoolManager : Singleton<ObjectPoolManager>
+    public class ObjectPoolManager : AbstractTargetPoolManager
     {
         [SerializeField] private ObjectPoolInfo<AbstractTarget>[] targetPools;
 
         private float _totalTargetProbability;
 
-        private void Initialize()
+        protected override void Initialize()
         {
             foreach (var poolInfo in targetPools)
             {
@@ -22,7 +22,7 @@ namespace MightyAdventures.SpawnSystem
             }
         }
 
-        public AbstractTarget GetRandomTarget()
+        public override AbstractTarget GetTarget()
         {
             var currentProbability = 0f;
             var randomProbability = UnityEngine.Random.Range(0f, _totalTargetProbability);
@@ -34,40 +34,6 @@ namespace MightyAdventures.SpawnSystem
             });
             return selectedTargetPool.Pool.Get();
         }
-
-        #region MonoBehaviour Methods
-
-        private void Start()
-        {
-            Initialize();
-        }
-
-        #endregion
-
-        #region Pool Methods
-
-        private void OnTargetObjectCreate(AbstractTarget obj, ObjectPool<AbstractTarget> objPool)
-        {
-            obj.gameObject.SetActive(false);
-            obj.OnDisable += OnTargetDisabled;
-
-            void OnTargetDisabled()
-            {
-                objPool.Release(obj);
-            }
-        }
-
-        private void OnTargetObjectGet(AbstractTarget obj)
-        {
-            obj.gameObject.SetActive(true);
-        }
-
-        private void OnTargetObjectReleased(AbstractTarget obj)
-        {
-            obj.gameObject.SetActive(false);
-        }
-
-        #endregion
 
         #region Structs
 
