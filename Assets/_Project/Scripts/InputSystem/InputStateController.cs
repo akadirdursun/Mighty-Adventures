@@ -6,13 +6,14 @@ namespace MightyAdventures.InputSystem
     {
         [SerializeField] private PlayerInputs playerInputs;
 
-        #region MonoBehaviour Methods
-
-        private void Start()
+        public void EnableGameplayInputs()
         {
-            playerInputs.EnableGameplayInputs();
+            playerInputs.GameplayActions.Enable();
         }
 
-        #endregion
+        public void DisableGameplayInputs()
+        {
+            playerInputs.GameplayActions.Disable();
+        }
     }
 }

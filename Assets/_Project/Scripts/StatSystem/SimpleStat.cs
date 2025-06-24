@@ -8,37 +8,31 @@ namespace MightyAdventures.StatSystem
     {
         #region Constructors
 
-        public SimpleStat(float value, float maxValue, bool showMaxValueOnText)
+        public SimpleStat(float value)
         {
             this.value = value;
-            this.maxValue = maxValue;
-            this.showMaxValueOnText = showMaxValueOnText;
         }
 
         #endregion
 
         [SerializeField] private float value;
-        [SerializeField] private float maxValue = float.MaxValue;
-        [SerializeField] private bool showMaxValueOnText;
 
         public override float Value => value;
 
         public void ChangeValue(float changeAmount)
         {
-            value = Mathf.Clamp(changeAmount + value, 0, maxValue);
+            value += changeAmount;
             OnStatChanged?.Invoke();
         }
 
         public override string GetValueText()
         {
-            var log = $"{value:F2}";
-            if (showMaxValueOnText) log += $"/ {maxValue:F2}";
-            return log;
+            return $"{value:F0}";
         }
 
         public SimpleStat Clone()
         {
-            return new SimpleStat(value, maxValue, showMaxValueOnText);
+            return new SimpleStat(value);
         }
     }
 }

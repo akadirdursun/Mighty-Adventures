@@ -39,7 +39,7 @@ namespace MightyAdventures.EnemySystem
     public struct EnemyLevelInfo
     {
         public int level;
-        public CharacterStats stats;
+        public EnemyCharacterStats stats;
         public float experience;
     }
 }

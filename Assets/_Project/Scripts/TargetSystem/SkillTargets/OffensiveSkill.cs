@@ -22,7 +22,7 @@ namespace MightyAdventures.TargetSystem.SkillTargets
         private void DamageEnemy()
         {
             var isCritical = Random.Range(0f, 1f) <= criticalChance;
-            var baseDamage = playerCharacterData.CharacterStats.Damage.Value;
+            var baseDamage = playerCharacterData.Stats.Damage.Value;
             var damage = baseDamage * damageMultiplier;
             if (isCritical)
             {

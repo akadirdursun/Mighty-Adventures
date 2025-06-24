@@ -22,7 +22,7 @@ namespace MightyAdventures.MainMenu
             _playerCharacterTemplate = characterTemplate;
             var character = Instantiate(_playerCharacterTemplate.Prefab, characterParent);
             character.transform.localScale = Vector3.one * characterPrefabScale;
-            statTextPreview.Initialize(_playerCharacterTemplate.CharacterStats);
+            statTextPreview.Initialize(_playerCharacterTemplate.PlayerCharacterStats);
         }
 
         private void OnSelectButtonClicked()

@@ -7,12 +7,11 @@ namespace MightyAdventures.StatSystem.UI
     {
         [SerializeField] private TMP_Text statInfoText;
 
-        public void Initialize(CharacterStats characterStats)
+        public void Initialize(PlayerCharacterStats playerCharacterStats)
         {
-            statInfoText.text = $"Health: {characterStats.Health.GetValueText()}" +
-                                $"\nHealth Regen: {characterStats.HealthRegen.GetValueText()}/s" +
-                                $"\nDamage Resistance: {characterStats.DamageResistance.GetValueText()}%" +
-                                $"\nDamage: {characterStats.Damage.GetValueText()}";
+            statInfoText.text = $"Health: {playerCharacterStats.Health.GetValueText()}" +
+                                $"\nDamage Resistance: {playerCharacterStats.DamageResistance.GetValueText()}" +
+                                $"\nDamage: {playerCharacterStats.Damage.GetValueText()}";
         }
     }
 }

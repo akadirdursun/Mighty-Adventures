@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using MightyAdventures.CharacterSystem;
 using MightyAdventures.GameZone;
 using UnityEngine;
@@ -10,18 +9,35 @@ namespace MightyAdventures.SpawnSystem
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
         [SerializeField] private GameZoneData gameZoneData;
-        [SerializeField] private AnimationCurve spawnTargetTimeCurve;
-        private ObjectPoolManager _objectPoolManager;
+        [SerializeField] private AbstractTargetPoolManager targetPoolManager;
 
         private float _spawnTimer;
+        private Coroutine _spawnCoroutine;
+
+        public void ActivateTargetSpawner()
+        {
+            if (_spawnCoroutine != null) return;
+            _spawnCoroutine = StartCoroutine(SpawnTargetCoroutine());
+        }
+
+        public void DeactivateTargetSpawner()
+        {
+            if (_spawnCoroutine == null) return;
+            StopCoroutine(_spawnCoroutine);
+            _spawnCoroutine = null;
+        }
 
         private void SpawnTarget()
         {
-            var target = _objectPoolManager.GetRandomTarget();
-            var spawnPos = gameZoneData.GetRandomPositionInBounds();
-            target.transform.position = spawnPos;
-            target.Enable();
-            target.Throw();
+            var spawnTokenCunt = playerCharacterData.Stats.MaxSkillTokenCount.Value;
+            for (int i = 0; i < spawnTokenCunt; i++)
+            {
+                var target = targetPoolManager.GetTarget();
+                var spawnPos = gameZoneData.GetRandomPositionInBounds();
+                target.transform.position = spawnPos;
+                target.Enable();
+                target.Throw();
+            }
         }
 
         private IEnumerator SpawnTargetCoroutine()
@@ -35,9 +51,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void SetSpawnTimer()
         {
-            var maxTime = spawnTargetTimeCurve.keys.Last().time;
-            var time = Mathf.Clamp(playerCharacterData.Level, 0, maxTime);
-            _spawnTimer = spawnTargetTimeCurve.Evaluate(time);
+            _spawnTimer = playerCharacterData.Stats.AttackSpeed.Value;
         }
 
         #region MonoBehaviour Methods
@@ -49,9 +63,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void Start()
         {
-            _objectPoolManager = ObjectPoolManager.Instance;
             SetSpawnTimer();
-            StartCoroutine(SpawnTargetCoroutine());
         }
 
         private void OnDisable()
