@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab2e9a67e7a442d9ecb1e58e07453fd, type: 3}
+  m_Name: Chicken
+  m_EditorClassIdentifier: 
+  enemyName: Chicken
+  prefab: {fileID: 2465234378530288233, guid: 5d09acaa5d5c1e1469f5b9b4de5ac6fb, type: 3}
+  levelInfoArray:
+  - level: 1
+    stats:
+      health:
+        maxValue: 10
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 2
+      attackSpeed:
+        value: 2
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    stat:
+      health:
+        maxValue: 10
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 2
+      attackSpeed:
+        value: 2
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    experience: 2
+  - level: 2
+    stats:
+      health:
+        maxValue: 15
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 3
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    stat:
+      health:
+        maxValue: 15
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 1
+        maxValue: 3
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 0
+      maxTrapSpawnCount:
+        value: 0
+    experience: 4
+  - level: 3
+    stats:
+      health:
+        maxValue: 20
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 3
+        maxValue: 5
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 5
+      maxTrapSpawnCount:
+        value: 1
+    stat:
+      health:
+        maxValue: 20
+        regenRate: 0
+      damageResistance:
+        value: 0
+      damage:
+        minValue: 3
+        maxValue: 5
+      attackSpeed:
+        value: 1.5
+      trapSpawnChance:
+        value: 5
+      maxTrapSpawnCount:
+        value: 1
+    experience: 8
