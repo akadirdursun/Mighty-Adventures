@@ -5,7 +5,6 @@
         IdleState,
         CombatState,
         LevelUpState,
-        ShopState,
         DefeatState,
     }
 }

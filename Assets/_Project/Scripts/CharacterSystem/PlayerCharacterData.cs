@@ -11,7 +11,7 @@ namespace MightyAdventures.CharacterSystem
         [SerializeField, Space] private string characterName;
         [SerializeField] private int level = 1;
         [SerializeField] private float experience;
-        [SerializeField] private PlayerCharacterStats playerCharacterStats;
+        [SerializeField] private PlayerCharacterStats stats;
         private PlayerCharacterTemplate _template;
         private float _targetExperience;
         public string Name => characterName;
@@ -19,18 +19,20 @@ namespace MightyAdventures.CharacterSystem
         public float TargetExperience => _targetExperience;
         public float CurrentExperience => experience;
         public GameObject CharacterPrefab => _template.Prefab;
-        public PlayerCharacterStats PlayerCharacterStats => playerCharacterStats;
+        public PlayerCharacterStats Stats => stats;
         public Action OnCharacterLevelChanged;
         public Action OnCharacterExperienceChanged;
+        public Action OnCharacterInitialized;
 
         public void InitializePlayerCharacter(PlayerCharacterTemplate template)
         {
             _template = template;
             characterName = template.CharacterName;
-            playerCharacterStats = template.PlayerCharacterStats.Clone();
+            stats = template.PlayerCharacterStats.Clone();
             level = 1;
             experience = 0;
             SetTargetExperience();
+            OnCharacterInitialized?.Invoke();
         }
 
         public void AddExperience(float experienceToAdd)
@@ -54,8 +56,8 @@ namespace MightyAdventures.CharacterSystem
 
         public void Damage(float damageTaken)
         {
-            var resistanceAmount = damageTaken * playerCharacterStats.DamageResistance.PercentValue;
-            playerCharacterStats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
+            var resistanceAmount = damageTaken * stats.DamageResistance.PercentValue;
+            stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
         }
     }
 }

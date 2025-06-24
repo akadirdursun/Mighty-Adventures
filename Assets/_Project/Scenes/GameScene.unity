@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 810040817}
   - component: {fileID: 810040819}
   - component: {fileID: 810040820}
+  - component: {fileID: 810040821}
   m_Layer: 0
   m_Name: EnemyControllers
   m_TagString: Untagged
@@ -708,6 +709,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
+--- !u!114 &810040821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810040816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb62b626d172ecc4585d23cfec9a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
+  listenedGameState: 1
+  gameStateEnterResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  gameStateExitResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 810040819}
+        m_TargetAssemblyTypeName: MightyAdventures.EnemySystem.EnemyAttackHandler,
+          Assembly-CSharp
+        m_MethodName: StopAttackCoroutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &918754540
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918754542}
   - component: {fileID: 918754541}
+  - component: {fileID: 918754543}
   m_Layer: 0
   m_Name: PlayerCharacterControllers
   m_TagString: Untagged
@@ -753,6 +788,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918754543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918754540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13c591f965565b48bd4025dfc4cad4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
 --- !u!1 &925644970
 GameObject:
   m_ObjectHideFlags: 0

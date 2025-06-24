@@ -19,7 +19,7 @@ namespace MightyAdventures.HUD
         private void Initialize()
         {
             nameText.text = playerCharacterData.Name;
-            var characterStats = playerCharacterData.PlayerCharacterStats;
+            var characterStats = playerCharacterData.Stats;
             healthView.Initialize(characterStats.Health);
             damageView.Initialize(characterStats.Damage);
             ;

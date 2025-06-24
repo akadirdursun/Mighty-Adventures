@@ -13,12 +13,14 @@ namespace MightyAdventures.EnemySystem
 
         private void StartAttackCoroutine()
         {
-            if (_attackCoroutine != null)
-            {
-                StopCoroutine(_attackCoroutine);
-            }
-
+            StopAttackCoroutine();
             _attackCoroutine = StartCoroutine(AttackRoutine());
+        }
+
+        public void StopAttackCoroutine()
+        {
+            if(_attackCoroutine==null)return;
+            StopCoroutine(_attackCoroutine);
         }
 
         private IEnumerator AttackRoutine()
