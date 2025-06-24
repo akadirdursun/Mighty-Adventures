@@ -35,6 +35,16 @@ namespace MightyAdventures.HUD
             Initialize();
         }
 
+        private void OnEnable()
+        {
+            playerCharacterData.OnCharacterInitialized += Initialize;
+        }
+
+        private void OnDisable()
+        {
+            playerCharacterData.OnCharacterInitialized -= Initialize;
+        }
+
         #endregion
     }
 }

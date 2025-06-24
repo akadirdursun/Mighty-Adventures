@@ -35,6 +35,7 @@ namespace MightyAdventures.HUD
 
         private void OnEnable()
         {
+            playerCharacterData.OnCharacterInitialized += Initialize;
             playerCharacterData.OnCharacterLevelChanged += UpdateLevelInfo;
             playerCharacterData.OnCharacterExperienceChanged += UpdateExperienceView;
         }
@@ -46,6 +47,7 @@ namespace MightyAdventures.HUD
 
         private void OnDisable()
         {
+            playerCharacterData.OnCharacterInitialized -= Initialize;
             playerCharacterData.OnCharacterLevelChanged -= UpdateLevelInfo;
             playerCharacterData.OnCharacterExperienceChanged -= UpdateExperienceView;
         }

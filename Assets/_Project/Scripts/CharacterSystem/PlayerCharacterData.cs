@@ -24,15 +24,20 @@ namespace MightyAdventures.CharacterSystem
         public Action OnCharacterExperienceChanged;
         public Action OnCharacterInitialized;
 
-        public void InitializePlayerCharacter(PlayerCharacterTemplate template)
+        public void InitializePlayerCharacter()
         {
-            _template = template;
-            characterName = template.CharacterName;
-            stats = template.PlayerCharacterStats.Clone();
+            characterName = _template.CharacterName;
+            stats = _template.PlayerCharacterStats.Clone();
             level = 1;
             experience = 0;
             SetTargetExperience();
             OnCharacterInitialized?.Invoke();
+        }
+        
+        public void InitializePlayerCharacter(PlayerCharacterTemplate template)
+        {
+            _template = template;
+            InitializePlayerCharacter();
         }
 
         public void AddExperience(float experienceToAdd)
