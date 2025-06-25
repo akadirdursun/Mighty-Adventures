@@ -59,9 +59,9 @@ namespace MightyAdventures.StatSystem
             IncreaseCurrentValue(regenRate);
         }
 
-        public void SetRegenRate(float newRegenRate)
+        public void IncreaseRegenRate(float increaseAmount)
         {
-            regenRate = newRegenRate;
+            regenRate += increaseAmount;
             OnStatChanged?.Invoke();
         }
 
