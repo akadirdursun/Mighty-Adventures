@@ -1,4 +1,5 @@
-﻿using MightyAdventures.StatSystem;
+﻿using System;
+using MightyAdventures.StatSystem;
 using UnityEngine;
 
 namespace MightyAdventures.PowerUps
@@ -7,33 +8,31 @@ namespace MightyAdventures.PowerUps
     public class VitalityStatAbstractPowerUpData : AbstractPowerUpData
     {
         [SerializeField] private VitalityStatTypes statType;
-        [SerializeField, Range(0f, 100f)] private float vitalityPercentIncrease;
-        [SerializeField] private float vitalityRegenIncrease;
+        [SerializeField, Range(0f, 100f)] private float statIncreasePercent;
+        [SerializeField] private float regenIncrease;
 
         public override void ApplyPowerUp(PlayerCharacterStats stats)
         {
             var vitalityStat = GetVitalityStat();
             var currentVitality = vitalityStat.Value;
-            var increaseAmount = currentVitality * vitalityRegenIncrease / 100f;
+            var increaseAmount = currentVitality * statIncreasePercent / 100f;
             vitalityStat.IncreaseMaxValue(increaseAmount);
-            vitalityStat.IncreaseRegenRate(vitalityRegenIncrease);
+            vitalityStat.IncreaseRegenRate(regenIncrease);
 
             VitalityStat GetVitalityStat()
             {
-                switch (statType)
+                return statType switch
                 {
-                    case VitalityStatTypes.Health:
-                        return stats.Health;
-                    default:
-                        return stats.Health;
-                }
+                    VitalityStatTypes.Health => stats.Health,
+                    _ => throw new ArgumentOutOfRangeException()
+                };
             }
         }
 
         public override string GetDescription()
         {
             var statColorHex = GetColorHexCode();
-            return $"Increase <color=#{statColorHex}>{statName}</color> by %{vitalityPercentIncrease} and <color=#{statColorHex}>regeneration</color> by {vitalityRegenIncrease:F1}";
+            return $"Increase <color=#{statColorHex}>{statName}</color> by {statIncreasePercent}% and <color=#{statColorHex}>regeneration</color> by {regenIncrease:F1}";
         }
     }
 }

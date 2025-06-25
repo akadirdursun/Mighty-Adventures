@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statName: Health
   statColor: {r: 0.6862745, g: 0, b: 0, a: 1}
-  icon: {fileID: 21300000, guid: 4c40883240ab7ff45a9ff3cead5038a0, type: 3}
+  icon: {fileID: 21300000, guid: d2f6497a6974dca4b9992e81e39a0d05, type: 3}
   statType: 0
-  vitalityPercentIncrease: 2
-  vitalityRegenIncrease: 0.5
+  statIncreasePercent: 2
+  regenIncrease: 0.5
