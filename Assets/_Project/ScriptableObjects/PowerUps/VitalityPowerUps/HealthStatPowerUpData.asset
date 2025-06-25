@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3162fdf5084b82805ba616ced33b99, type: 3}
   m_Name: HealthStatPowerUpData
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 2c36633b3f4616d429aaef19f8e28ca4, type: 3}
   statName: Health
-  statType: 0
   statColor: {r: 0.6862745, g: 0, b: 0, a: 1}
+  icon: {fileID: 21300000, guid: 4c40883240ab7ff45a9ff3cead5038a0, type: 3}
+  statType: 0
   vitalityPercentIncrease: 2
   vitalityRegenIncrease: 0.5
