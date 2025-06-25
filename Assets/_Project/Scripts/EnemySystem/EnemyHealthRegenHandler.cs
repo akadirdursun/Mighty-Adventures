@@ -13,11 +13,7 @@ namespace MightyAdventures.EnemySystem
 
         private void OnCharacterHealthChanged()
         {
-            if (_healthRegenCoroutine != null)
-            {
-                StopCoroutine(_healthRegenCoroutine);
-                _healthRegenCoroutine = null;
-            }
+            StopHealthRegenRoutine();
 
             if (_enemyHealthStat.IsFull) return;
             _healthRegenCoroutine = StartCoroutine(HealthRegenRoutine());
@@ -32,6 +28,13 @@ namespace MightyAdventures.EnemySystem
             }
         }
 
+        private void StopHealthRegenRoutine()
+        {
+            if (_healthRegenCoroutine == null) return;
+            StopCoroutine(_healthRegenCoroutine);
+            _healthRegenCoroutine = null;
+        }
+
         private void OnNewEnemySpawned()
         {
             UnregisterFromEvents();
@@ -43,12 +46,14 @@ namespace MightyAdventures.EnemySystem
         {
             if (_enemyHealthStat == null) return;
             _enemyHealthStat.OnStatChanged += OnCharacterHealthChanged;
+            spawnedEnemyData.OnSpawnedEnemyDied += StopHealthRegenRoutine;
         }
 
         private void UnregisterFromEvents()
         {
             if (_enemyHealthStat == null) return;
             _enemyHealthStat.OnStatChanged -= OnCharacterHealthChanged;
+            spawnedEnemyData.OnSpawnedEnemyDied -= StopHealthRegenRoutine;
         }
 
         #region MonoBehaviour Methods
