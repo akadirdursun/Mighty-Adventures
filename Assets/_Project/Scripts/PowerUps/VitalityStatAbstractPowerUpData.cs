@@ -6,9 +6,7 @@ namespace MightyAdventures.PowerUps
     [CreateAssetMenu(fileName = "NewVitalityStatPowerUpData", menuName = "Mighty Adventures/Power Ups/Vitality Stat Power Up")]
     public class VitalityStatAbstractPowerUpData : AbstractPowerUpData
     {
-        [SerializeField] private string statName;
         [SerializeField] private VitalityStatTypes statType;
-        [SerializeField] private Color statColor;
         [SerializeField, Range(0f, 100f)] private float vitalityPercentIncrease;
         [SerializeField] private float vitalityRegenIncrease;
 
@@ -34,8 +32,8 @@ namespace MightyAdventures.PowerUps
 
         public override string GetDescription()
         {
-            var statColorHex = ColorUtility.ToHtmlStringRGB(statColor);
-            return $"Increase {statName} by %{vitalityPercentIncrease} and regeneration by {vitalityRegenIncrease:F1}";
+            var statColorHex = GetColorHexCode();
+            return $"Increase <color=#{statColorHex}>{statName}</color> by %{vitalityPercentIncrease} and <color=#{statColorHex}>regeneration</color> by {vitalityRegenIncrease:F1}";
         }
     }
 }

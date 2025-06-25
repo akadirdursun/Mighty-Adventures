@@ -22,6 +22,13 @@ namespace MightyAdventures.StatSystem
 
         public override float Value => Random.Range(minValue, maxValue);
 
+        public void ChangeValue(float minValueChange, float maxValueChange)
+        {
+            minValue += minValueChange;
+            maxValue += maxValueChange;
+            OnStatChanged?.Invoke();
+        }
+        
         public override string GetValueText()
         {
             return $"{minValue:F0} ~ {maxValue:F0}";
