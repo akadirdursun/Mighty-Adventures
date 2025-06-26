@@ -58,7 +58,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void OnEnable()
         {
-            playerCharacterData.OnCharacterLevelChanged += SetSpawnTimer;
+            playerCharacterData.OnCharacterLevelUp += SetSpawnTimer;
         }
 
         private void Start()
@@ -68,7 +68,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void OnDisable()
         {
-            playerCharacterData.OnCharacterLevelChanged -= SetSpawnTimer;
+            playerCharacterData.OnCharacterLevelUp -= SetSpawnTimer;
         }
 
         #endregion

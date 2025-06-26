@@ -11,14 +11,14 @@ namespace MightyAdventures.CharacterSystem
         private Coroutine _healthRegenCoroutine;
         private VitalityStat _healthStat;
 
-        private void OnCharacterHealthChanged()
+        public void TryToStartHealthRegen()
         {
-            StopHealthRegeneration();
+            StopHealthRegen();
             if (_healthStat.IsFull) return;
             _healthRegenCoroutine = StartCoroutine(HealthRegenRoutine());
         }
 
-        private void StopHealthRegeneration()
+        public void StopHealthRegen()
         {
             if (_healthRegenCoroutine == null) return;
             StopCoroutine(_healthRegenCoroutine);
@@ -44,15 +44,15 @@ namespace MightyAdventures.CharacterSystem
         private void RegisterToHealthEvents()
         {
             if (_healthStat == null) return;
-            _healthStat.OnStatChanged += OnCharacterHealthChanged;
-            _healthStat.OnVitalDropToZero += StopHealthRegeneration;
+            _healthStat.OnStatChanged += TryToStartHealthRegen;
+            _healthStat.OnVitalDropToZero += StopHealthRegen;
         }
 
         private void UnregisterFromHealthEvents()
         {
             if (_healthStat == null) return;
-            _healthStat.OnStatChanged -= OnCharacterHealthChanged;
-            _healthStat.OnVitalDropToZero -= StopHealthRegeneration;
+            _healthStat.OnStatChanged -= TryToStartHealthRegen;
+            _healthStat.OnVitalDropToZero -= StopHealthRegen;
         }
 
         #region MonoBehaviour Methods

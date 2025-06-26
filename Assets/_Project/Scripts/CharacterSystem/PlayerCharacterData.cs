@@ -20,7 +20,7 @@ namespace MightyAdventures.CharacterSystem
         public float CurrentExperience => experience;
         public GameObject CharacterPrefab => _template.Prefab;
         public PlayerCharacterStats Stats => stats;
-        public Action OnCharacterLevelChanged;
+        public Action OnCharacterLevelUp;
         public Action OnCharacterExperienceChanged;
         public Action OnCharacterInitialized;
 
@@ -49,7 +49,7 @@ namespace MightyAdventures.CharacterSystem
                 level++;
                 experience -= _targetExperience;
                 SetTargetExperience();
-                OnCharacterLevelChanged?.Invoke();
+                OnCharacterLevelUp?.Invoke();
             }
         }
 
