@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRigidbody: {fileID: 693152448544446696}
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
-  damage: 10
+  damage: 5
 --- !u!1 &2284975625487269207
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,28 +20,13 @@ MonoBehaviour:
       health:
         maxValue: 25
         regenRate: 0
+      damage:
+        minValue: 2
+        maxValue: 3
       damageResistance:
         value: 10
-      damage:
-        minValue: 3
-        maxValue: 4
       attackSpeed:
-        value: 2
-      trapSpawnChance:
-        value: 10
-      maxTrapSpawnCount:
-        value: 1
-    stat:
-      health:
-        maxValue: 25
-        regenRate: 0
-      damageResistance:
-        value: 10
-      damage:
-        minValue: 3
-        maxValue: 4
-      attackSpeed:
-        value: 2
+        value: 4
       trapSpawnChance:
         value: 10
       maxTrapSpawnCount:
@@ -52,28 +37,13 @@ MonoBehaviour:
       health:
         maxValue: 35
         regenRate: 0
+      damage:
+        minValue: 2
+        maxValue: 4
       damageResistance:
         value: 10
-      damage:
-        minValue: 3
-        maxValue: 5
       attackSpeed:
-        value: 2
-      trapSpawnChance:
-        value: 15
-      maxTrapSpawnCount:
-        value: 2
-    stat:
-      health:
-        maxValue: 35
-        regenRate: 0
-      damageResistance:
-        value: 10
-      damage:
-        minValue: 3
-        maxValue: 5
-      attackSpeed:
-        value: 2
+        value: 3.5
       trapSpawnChance:
         value: 15
       maxTrapSpawnCount:
@@ -84,28 +54,13 @@ MonoBehaviour:
       health:
         maxValue: 50
         regenRate: 1
+      damage:
+        minValue: 2
+        maxValue: 5
       damageResistance:
         value: 10
-      damage:
-        minValue: 4
-        maxValue: 8
       attackSpeed:
-        value: 1.75
-      trapSpawnChance:
-        value: 20
-      maxTrapSpawnCount:
-        value: 2
-    stat:
-      health:
-        maxValue: 50
-        regenRate: 1
-      damageResistance:
-        value: 10
-      damage:
-        minValue: 4
-        maxValue: 8
-      attackSpeed:
-        value: 1.75
+        value: 2.5
       trapSpawnChance:
         value: 20
       maxTrapSpawnCount:
