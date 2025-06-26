@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39a8af593de4ea590ce033585a6d5d2, type: 3}
+  m_Name: AttackSpeedStatPercentPowerUpData
+  m_EditorClassIdentifier: 
+  statName: Attack Speed
+  statColor: {r: 0.1764706, g: 0.78431374, b: 0.1764706, a: 1}
+  icon: {fileID: 21300000, guid: c7384df5b0c9fe3479aacb650ec9068d, type: 3}
+  statType: 0
+  statIncreasePercent: 5

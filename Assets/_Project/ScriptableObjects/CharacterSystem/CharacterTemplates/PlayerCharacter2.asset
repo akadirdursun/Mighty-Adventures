@@ -15,15 +15,15 @@ MonoBehaviour:
   characterName: Mighty Adventurer 2
   playerCharacterStats:
     health:
-      maxValue: 75
-      regenRate: 2
-    damageResistance:
-      value: 0
+      maxValue: 10
+      regenRate: 0.25
     damage:
       minValue: 3
       maxValue: 3
+    damageResistance:
+      value: 0
     attackSpeed:
       value: 2
     maxSkillTokenCount:
-      value: 4
+      value: 2
   prefab: {fileID: 5900776418649472191, guid: 30cd795794fdabc4f97b1cd6460b73d3, type: 3}

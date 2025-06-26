@@ -13,6 +13,7 @@ namespace MightyAdventures.EnemySystem
         [SerializeField] private EnemyCharacterStats stats;
 
         public Action OnSpawnedEnemyChanged;
+        public Action OnSpawnedEnemyDied;
 
         public GameObject Prefab { get; private set; }
 
@@ -35,6 +36,8 @@ namespace MightyAdventures.EnemySystem
         {
             var resistanceAmount = damageTaken * stats.DamageResistance.PercentValue;
             stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
+            if (stats.Health.Value > 0) return;
+            OnSpawnedEnemyDied?.Invoke();
         }
     }
 }
