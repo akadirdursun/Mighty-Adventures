@@ -270,13 +270,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPools:
-  - objectPrefab: {fileID: 4393670990646055752, guid: 34d2fa632826df04fb672843bb6e71dc, type: 3}
+  - objectPrefab: {fileID: 9163031320238114329, guid: d7fe25e101e3f3f419642ce245206594, type: 3}
     startingPoolSize: 1
     spawnChance: 1
-  - objectPrefab: {fileID: 4393670990646055752, guid: b0d493ea8c098004e875bcb415db944d, type: 3}
+  - objectPrefab: {fileID: 6127757866450373483, guid: 3d72517cc9a4bbd45be0d23a8b4bd493, type: 3}
+    startingPoolSize: 1
+    spawnChance: 0.15
+  - objectPrefab: {fileID: 7361458514339840748, guid: 7e8fab3935736944eaac631fc06015a4, type: 3}
     startingPoolSize: 1
     spawnChance: 0.3
-  - objectPrefab: {fileID: 7791280310182146020, guid: b8d91c1291294674a86d64cc73f3f7f1, type: 3}
+  - objectPrefab: {fileID: 1073582055475556477, guid: cc61474f95bf1cf49a6e437a1e2ef6ca, type: 3}
     startingPoolSize: 1
     spawnChance: 0.5
 --- !u!114 &227555540
@@ -550,10 +553,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPools:
-  - objectPrefab: {fileID: 4393670990646055752, guid: 34d2fa632826df04fb672843bb6e71dc, type: 3}
+  - objectPrefab: {fileID: 9163031320238114329, guid: d7fe25e101e3f3f419642ce245206594, type: 3}
     startingPoolSize: 2
     spawnChance: 0.3
-  - objectPrefab: {fileID: 4393670990646055752, guid: b0d493ea8c098004e875bcb415db944d, type: 3}
+  - objectPrefab: {fileID: 6127757866450373483, guid: 3d72517cc9a4bbd45be0d23a8b4bd493, type: 3}
     startingPoolSize: 2
     spawnChance: 0.1
 --- !u!4 &807093625
@@ -1193,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1f9ed5ee5d4375a14c88de3e7a2ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 7791280310182146020, guid: b8d91c1291294674a86d64cc73f3f7f1, type: 3}
+  target: {fileID: 1073582055475556477, guid: cc61474f95bf1cf49a6e437a1e2ef6ca, type: 3}
   startingPoolSize: 1
 --- !u!114 &1670259112
 MonoBehaviour:
