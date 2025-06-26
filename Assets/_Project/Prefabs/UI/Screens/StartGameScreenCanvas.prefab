@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001490346860910115, guid: e8d1efdc6996cbb44b2675d35ff8736e, type: 3}
       propertyPath: m_Name
-      value: StartGameCanvas
+      value: StartGameScreenCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3947986406126010828, guid: e8d1efdc6996cbb44b2675d35ff8736e, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
