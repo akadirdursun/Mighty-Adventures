@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6382219236857620147, guid: 806aa5d61a3782e4c9a2d59c034b36ab, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 49d68effb1b95284e91ccf0be1a5957f, type: 2}
     - target: {fileID: 410057178764834085, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079208259130747869, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_Name
-      value: SneakAttack Variant
+      value: SneakAttack
       objectReference: {fileID: 0}
     - target: {fileID: 4163566268710663025, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: criticalChance
@@ -81,6 +77,10 @@ PrefabInstance:
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4682532044009533637, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 49d68effb1b95284e91ccf0be1a5957f, type: 2}
+    - target: {fileID: 6382219236857620147, guid: 806aa5d61a3782e4c9a2d59c034b36ab, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 49d68effb1b95284e91ccf0be1a5957f, type: 2}
