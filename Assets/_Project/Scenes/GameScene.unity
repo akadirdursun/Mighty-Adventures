@@ -272,13 +272,13 @@ MonoBehaviour:
   targetPools:
   - objectPrefab: {fileID: 4393670990646055752, guid: 34d2fa632826df04fb672843bb6e71dc, type: 3}
     startingPoolSize: 1
-    spawnChance: 0.1
+    spawnChance: 1
   - objectPrefab: {fileID: 4393670990646055752, guid: b0d493ea8c098004e875bcb415db944d, type: 3}
     startingPoolSize: 1
-    spawnChance: 0.1
+    spawnChance: 0.3
   - objectPrefab: {fileID: 7791280310182146020, guid: b8d91c1291294674a86d64cc73f3f7f1, type: 3}
     startingPoolSize: 1
-    spawnChance: 0.25
+    spawnChance: 0.5
 --- !u!114 &227555540
 MonoBehaviour:
   m_ObjectHideFlags: 0
