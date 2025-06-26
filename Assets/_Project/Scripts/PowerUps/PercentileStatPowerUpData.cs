@@ -8,7 +8,7 @@ namespace MightyAdventures.PowerUps
     public class PercentileStatPowerUpData : AbstractPowerUpData
     {
         [SerializeField] private PercentileStatTypes statType;
-        [SerializeField, Range(0f, 100f)] private float statIncrease;
+        [SerializeField, Range(0.1f, 100f)] private float statIncrease;
 
         public override void ApplyPowerUp(PlayerCharacterStats stats)
         {

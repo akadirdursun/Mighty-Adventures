@@ -6,12 +6,12 @@ namespace MightyAdventures.UIScreens
     {
         [SerializeField] private Canvas canvas;
 
-        public void Show()
+        public virtual void Show()
         {
             canvas.enabled = true;
         }
 
-        protected void Hide()
+        public void Hide()
         {
             canvas.enabled = false;
         }

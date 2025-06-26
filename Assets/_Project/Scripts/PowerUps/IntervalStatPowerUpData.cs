@@ -1,5 +1,7 @@
-﻿using MightyAdventures.StatSystem;
+﻿using System;
+using MightyAdventures.StatSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace MightyAdventures.PowerUps
 {
@@ -23,7 +25,7 @@ namespace MightyAdventures.PowerUps
                 return statType switch
                 {
                     IntervalStatTypes.Damage => stats.Damage,
-                    _ => stats.Damage
+                    _ => throw new ArgumentOutOfRangeException()
                 };
             }
         }
