@@ -26,7 +26,7 @@ MonoBehaviour:
       damageResistance:
         value: 2
       attackSpeed:
-        value: 3.5
+        value: 2.5
       trapSpawnChance:
         value: 0
       maxTrapSpawnCount:
@@ -43,7 +43,7 @@ MonoBehaviour:
       damageResistance:
         value: 4
       attackSpeed:
-        value: 3
+        value: 2.5
       trapSpawnChance:
         value: 10
       maxTrapSpawnCount:
