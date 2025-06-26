@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59609148bcf01b34b9f208894a59b032, type: 3}
-  m_Name: PlayerCharacter1
+  m_Name: PantherChallenger
   m_EditorClassIdentifier: 
-  characterName: Mighty Adventurer 1
+  characterName: Panther Challenger
   playerCharacterStats:
     health:
       maxValue: 20
@@ -26,4 +26,4 @@ MonoBehaviour:
       value: 2.5
     maxSkillTokenCount:
       value: 1
-  prefab: {fileID: 5900776418649472191, guid: f711847327ed7d34682ba696d4a1c5c5, type: 3}
+  prefab: {fileID: 651823435953161060, guid: a87e2ce3a7973c3459ce5ab727cddaf9, type: 3}
