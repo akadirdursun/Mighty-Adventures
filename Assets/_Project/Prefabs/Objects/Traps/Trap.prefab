@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 338707186069388715, guid: eb6e80ba549c0da4585e45cda1c53653, type: 3}
       propertyPath: m_Name
-      value: Trap Variant
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 2150838626183947091, guid: eb6e80ba549c0da4585e45cda1c53653, type: 3}
       propertyPath: m_LocalPosition.x
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRigidbody: {fileID: 1828175875255724580}
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
-  damage: 5
+  damage: 3
 --- !u!54 &1828175875255724580 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 693152448544446696, guid: eb6e80ba549c0da4585e45cda1c53653, type: 3}
