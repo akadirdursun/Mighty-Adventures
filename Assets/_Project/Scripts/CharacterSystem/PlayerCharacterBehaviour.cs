@@ -42,6 +42,13 @@ namespace MightyAdventures.CharacterSystem
             Stats.Health.RegenVitality();
             OnHealed?.Invoke();
         }
+        
+        public void Heal(float healAmount)
+        {
+            if (Stats.Health.IsFull) return;
+            Stats.Health.IncreaseCurrentValue(healAmount);
+            OnHealed?.Invoke();
+        }
 
         public void AddExperience(float experienceToAdd)
         {
