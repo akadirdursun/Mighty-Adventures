@@ -18,6 +18,11 @@ namespace MightyAdventures.CharacterSystem
 
         private PlayerCharacterStats Stats => playerCharacterData.Stats;
 
+        public void ReviveCharacter()
+        {
+            playerCharacterData.InitializePlayerCharacter(GetTargetExperience(1));
+        }
+
         public void Damage(float damageTaken)
         {
             var damageResistanceStat = Stats.DamageResistance;
@@ -34,18 +39,18 @@ namespace MightyAdventures.CharacterSystem
             {
                 newTotalExperience -= playerCharacterData.TargetExperience;
                 playerCharacterData.LevelUp();
-                playerCharacterData.SetTargetExperience(GetTargetExperience());
+                playerCharacterData.SetTargetExperience(GetTargetExperience(playerCharacterData.Level));
                 OnLevelUp?.Invoke();
             }
 
             playerCharacterData.SetExperience(newTotalExperience);
             OnGainExperience?.Invoke();
+        }
 
-            float GetTargetExperience()
-            {
-                var targetLevel = playerCharacterData.Level + 1;
-                return experienceData.GetExperienceCost(targetLevel);
-            }
+        private float GetTargetExperience(int currentLevel)
+        {
+            var targetLevel = currentLevel + 1;
+            return experienceData.GetExperienceCost(targetLevel);
         }
     }
 }
