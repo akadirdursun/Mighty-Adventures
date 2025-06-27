@@ -4,6 +4,7 @@ namespace MightyAdventures.CharacterSystem
 {
     public class PlayerCharacterAnimationController : MonoBehaviour
     {
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private Animator animator;
 
         private const string BasicAttackAnimationParameter = "OnBasicAttack";
@@ -18,27 +19,47 @@ namespace MightyAdventures.CharacterSystem
         private static readonly int OnDiedHash = Animator.StringToHash(DeathAnimationParameter);
 
         [ContextMenu("Basic Attack")]
-        public void OnBasicAttackUsed()
+        private void OnBasicAttackUsed()
         {
             animator.SetTrigger(OnBasicAttackHash);
         }
 
         [ContextMenu("Heavy Attack")]
-        public void OnHeavyAttackUsed()
+        private void OnHeavyAttackUsed()
         {
             animator.SetTrigger(OnHeavyAttackHash);
         }
 
         [ContextMenu("Damaged")]
-        public void OnDamaged()
+        private void OnDamaged()
         {
             animator.SetTrigger(OnDamagedHash);
         }
 
         [ContextMenu("Died")]
-        public void OnDied()
+        private void OnDied()
         {
             animator.SetTrigger(OnDiedHash);
         }
+        
+        #region MonoBehaviour Methods
+
+        private void OnEnable()
+        {
+            playerCharacterBehaviour.OnPerformBasicAttack += OnBasicAttackUsed;
+            playerCharacterBehaviour.OnPerformHeavyAttack += OnHeavyAttackUsed;
+            playerCharacterBehaviour.OnDamaged += OnDamaged;
+            playerCharacterBehaviour.OnDied += OnDied;
+        }
+
+        private void OnDisable()
+        {
+            playerCharacterBehaviour.OnPerformBasicAttack -= OnBasicAttackUsed;
+            playerCharacterBehaviour.OnPerformHeavyAttack -= OnHeavyAttackUsed;
+            playerCharacterBehaviour.OnDamaged -= OnDamaged;
+            playerCharacterBehaviour.OnDied -= OnDied;
+        }
+
+        #endregion
     }
 }

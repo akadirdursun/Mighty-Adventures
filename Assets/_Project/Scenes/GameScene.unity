@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08861d9d5b42f7e4e98ed63fd1cceaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
   gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
   targetPoolManager: {fileID: 227555539}
   minSpawnTime: 1
