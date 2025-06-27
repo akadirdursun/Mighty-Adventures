@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 665707289666325011, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 358159e3f04b40145b7b473a8b779cc0, type: 3}
+      objectReference: {fileID: 21300000, guid: 76855fbdf15b27f4d93e1bef0d41fd38, type: 3}
     - target: {fileID: 665707289666325011, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -59,14 +59,14 @@ PrefabInstance:
     - target: {fileID: 1176748652599948942, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 358159e3f04b40145b7b473a8b779cc0, type: 3}
+      objectReference: {fileID: 21300000, guid: 76855fbdf15b27f4d93e1bef0d41fd38, type: 3}
     - target: {fileID: 1176748652599948942, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2079208259130747869, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: m_Name
-      value: SneakAttack
+      value: HeavyAttack
       objectReference: {fileID: 0}
     - target: {fileID: 4163566268710663025, guid: b45020769b2717a42ad741220c1fcffe, type: 3}
       propertyPath: criticalChance
