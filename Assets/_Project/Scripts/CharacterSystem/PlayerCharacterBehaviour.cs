@@ -12,6 +12,7 @@ namespace MightyAdventures.CharacterSystem
         public Action OnPerformBasicAttack;
         public Action OnPerformHeavyAttack;
         public Action OnDamaged;
+        public Action OnHealed;
         public Action OnDied;
         public Action OnGainExperience;
         public Action OnLevelUp;
@@ -29,6 +30,13 @@ namespace MightyAdventures.CharacterSystem
             var resistanceAmount = damageTaken * damageResistanceStat.PercentValue;
             Stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
             OnDamaged?.Invoke();
+        }
+
+        public void Heal()
+        {
+            if (Stats.Health.IsFull) return;
+            Stats.Health.RegenVitality();
+            OnHealed?.Invoke();
         }
 
         public void AddExperience(float experienceToAdd)
