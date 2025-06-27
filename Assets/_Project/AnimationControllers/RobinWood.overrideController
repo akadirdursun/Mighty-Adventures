@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RobinWood
+  m_Controller: {fileID: 9100000, guid: fc03d59fa225c2f4ab0e7f41919a6107, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: f69486ec0c0754e4a926e0fa4171af3d, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: b9a2e388bc1651e499d912a65a02aaa7, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: f1615896e89d086499c881b1d1b087f1, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 329cc5e84bc0eef4eaab669051086b38, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 735b0a277837eaa4995a72d014548a92, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 257d858d58bfc25439b4c28229c8c88b, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 049dca7f1cb859d409a06ae020d3f748, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 6badc87827d0f484f8d59ea9ca6b8f3e, type: 3}
