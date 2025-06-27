@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
   gameZoneData: {fileID: 11400000, guid: a00a5c4d9d238654189f7b913c4fa274, type: 2}
   targetPoolManager: {fileID: 807093624}
 --- !u!114 &807093627
@@ -668,7 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
   enemySpawner: {fileID: 525631709}
 --- !u!4 &810040818
 Transform:
@@ -853,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce214e78f60f113429587450c2d7d762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
   gameStateData: {fileID: 11400000, guid: 331f02b06aa6fbc489c57880a1205369, type: 2}
 --- !u!114 &918754546
 MonoBehaviour:

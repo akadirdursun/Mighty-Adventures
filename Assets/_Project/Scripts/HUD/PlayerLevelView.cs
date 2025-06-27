@@ -8,6 +8,7 @@ namespace MightyAdventures.HUD
     public class PlayerLevelView : MonoBehaviour
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private Slider experienceSlider;
         [SerializeField] private TMP_Text levelText;
         [SerializeField] private TMP_Text experienceText;
@@ -36,8 +37,8 @@ namespace MightyAdventures.HUD
         private void OnEnable()
         {
             playerCharacterData.OnCharacterInitialized += Initialize;
-            playerCharacterData.OnCharacterLevelUp += UpdateLevelInfo;
-            playerCharacterData.OnCharacterExperienceChanged += UpdateExperienceView;
+            playerCharacterBehaviour.OnLevelUp += UpdateLevelInfo;
+            playerCharacterBehaviour.OnGainExperience += UpdateExperienceView;
         }
 
         private void Start()
@@ -48,8 +49,8 @@ namespace MightyAdventures.HUD
         private void OnDisable()
         {
             playerCharacterData.OnCharacterInitialized -= Initialize;
-            playerCharacterData.OnCharacterLevelUp -= UpdateLevelInfo;
-            playerCharacterData.OnCharacterExperienceChanged -= UpdateExperienceView;
+            playerCharacterBehaviour.OnLevelUp -= UpdateLevelInfo;
+            playerCharacterBehaviour.OnGainExperience -= UpdateExperienceView;
         }
 
         #endregion

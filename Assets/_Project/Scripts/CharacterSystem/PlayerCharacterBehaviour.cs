@@ -8,10 +8,13 @@ namespace MightyAdventures.CharacterSystem
     public class PlayerCharacterBehaviour : ScriptableObject
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
-        public Action PerformedBasicAttack;
-        public Action PerformedHeavyAttack;
+        [SerializeField] private PlayerCharacterExperienceData experienceData;
+        public Action OnPerformBasicAttack;
+        public Action OnPerformHeavyAttack;
         public Action OnDamaged;
-        public Action Died;
+        public Action OnDied;
+        public Action OnGainExperience;
+        public Action OnLevelUp;
 
         private PlayerCharacterStats Stats => playerCharacterData.Stats;
 
@@ -21,6 +24,28 @@ namespace MightyAdventures.CharacterSystem
             var resistanceAmount = damageTaken * damageResistanceStat.PercentValue;
             Stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
             OnDamaged?.Invoke();
+        }
+
+        public void AddExperience(float experienceToAdd)
+        {
+            var currentExperience = playerCharacterData.CurrentExperience;
+            var newTotalExperience = currentExperience + experienceToAdd;
+            if (newTotalExperience >= playerCharacterData.TargetExperience)
+            {
+                newTotalExperience -= playerCharacterData.TargetExperience;
+                playerCharacterData.LevelUp();
+                playerCharacterData.SetTargetExperience(GetTargetExperience());
+                OnLevelUp?.Invoke();
+            }
+
+            playerCharacterData.SetExperience(newTotalExperience);
+            OnGainExperience?.Invoke();
+
+            float GetTargetExperience()
+            {
+                var targetLevel = playerCharacterData.Level + 1;
+                return experienceData.GetExperienceCost(targetLevel);
+            }
         }
     }
 }

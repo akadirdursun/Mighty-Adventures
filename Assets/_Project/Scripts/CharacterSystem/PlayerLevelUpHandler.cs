@@ -6,7 +6,7 @@ namespace MightyAdventures.CharacterSystem
 {
     public class PlayerLevelUpHandler : MonoBehaviour
     {
-        [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private GameStateData gameStateData;
 
         private void OnPlayerLevelUp()
@@ -18,12 +18,12 @@ namespace MightyAdventures.CharacterSystem
 
         private void OnEnable()
         {
-            playerCharacterData.OnCharacterLevelUp += OnPlayerLevelUp;
+            playerCharacterBehaviour.OnLevelUp += OnPlayerLevelUp;
         }
 
         private void OnDisable()
         {
-            playerCharacterData.OnCharacterLevelUp -= OnPlayerLevelUp;
+            playerCharacterBehaviour.OnLevelUp -= OnPlayerLevelUp;
         }
 
         #endregion

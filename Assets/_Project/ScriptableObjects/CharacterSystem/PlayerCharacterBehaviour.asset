@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerCharacterBehaviour
   m_EditorClassIdentifier: 
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  experienceData: {fileID: 11400000, guid: 1e8da9d9048d6a0489f180088d1b3b16, type: 2}
