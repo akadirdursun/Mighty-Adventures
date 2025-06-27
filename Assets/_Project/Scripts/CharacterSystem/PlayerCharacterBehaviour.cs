@@ -1,4 +1,5 @@
 using System;
+using MightyAdventures.EnemySystem;
 using MightyAdventures.StatSystem;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace MightyAdventures.CharacterSystem
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
         [SerializeField] private PlayerCharacterExperienceData experienceData;
+        [SerializeField] private SpawnedEnemyData spawnedEnemyData;
         public Action OnPerformBasicAttack;
         public Action OnPerformHeavyAttack;
         public Action OnDamaged;
@@ -56,11 +58,28 @@ namespace MightyAdventures.CharacterSystem
             playerCharacterData.SetExperience(newTotalExperience);
             OnGainExperience?.Invoke();
         }
+        
+        public void PerformBasicAttackSkill(float damage)
+        {
+            DamageSpawnedEnemy(damage);
+            OnPerformBasicAttack?.Invoke();
+        }
+
+        public void PerformHeavyAttackSkill(float damage)
+        {
+            DamageSpawnedEnemy(damage);
+            OnPerformHeavyAttack?.Invoke();
+        }
 
         private float GetTargetExperience(int currentLevel)
         {
             var targetLevel = currentLevel + 1;
             return experienceData.GetExperienceCost(targetLevel);
+        }
+
+        private void DamageSpawnedEnemy(float damage)
+        {
+            spawnedEnemyData.Damage(damage);
         }
     }
 }
