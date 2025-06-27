@@ -1,5 +1,4 @@
 using System.Collections;
-using MightyAdventures.CharacterSystem;
 using MightyAdventures.GameZone;
 using MightyAdventures.SpawnSystem;
 using UnityEngine;
@@ -8,7 +7,6 @@ namespace MightyAdventures.TargetSystem
 {
     public class NeutralTargetSpawner : MonoBehaviour
     {
-        [SerializeField] private PlayerCharacterData playerCharacterData;
         [SerializeField] private GameZoneData gameZoneData;
         [SerializeField] private AbstractTargetPoolManager targetPoolManager;
         [SerializeField] private float minSpawnTime;
