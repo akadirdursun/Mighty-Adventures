@@ -1,4 +1,3 @@
-
 using MightyAdventures.CharacterSystem;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace MightyAdventures.EnemySystem
     public class EnemyDeathHandler : MonoBehaviour
     {
         [SerializeField] private SpawnedEnemyData spawnedEnemyData;
-        [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private EnemySpawner enemySpawner;
 
         private void OnNewEnemySpawned()
@@ -18,7 +17,7 @@ namespace MightyAdventures.EnemySystem
         private void OnEnemyHealthChanged()
         {
             if (spawnedEnemyData.IsAlive) return;
-            playerCharacterData.AddExperience(spawnedEnemyData.Experience);
+            playerCharacterBehaviour.AddExperience(spawnedEnemyData.Experience);
             enemySpawner.SpawnEnemy();
         }
 

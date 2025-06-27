@@ -8,6 +8,7 @@ namespace MightyAdventures.SpawnSystem
     public class TargetSpawner : MonoBehaviour
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private GameZoneData gameZoneData;
         [SerializeField] private AbstractTargetPoolManager targetPoolManager;
 
@@ -58,7 +59,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void OnEnable()
         {
-            playerCharacterData.OnCharacterLevelUp += SetSpawnTimer;
+            playerCharacterBehaviour.OnLevelUp += SetSpawnTimer;
         }
 
         private void Start()
@@ -68,7 +69,7 @@ namespace MightyAdventures.SpawnSystem
 
         private void OnDisable()
         {
-            playerCharacterData.OnCharacterLevelUp -= SetSpawnTimer;
+            playerCharacterBehaviour.OnLevelUp -= SetSpawnTimer;
         }
 
         #endregion

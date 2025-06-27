@@ -7,7 +7,7 @@ namespace MightyAdventures.EnemySystem
     public class EnemyAttackHandler : MonoBehaviour
     {
         [SerializeField] private SpawnedEnemyData spawnedEnemyData;
-        [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
 
         private Coroutine _attackCoroutine;
 
@@ -28,7 +28,7 @@ namespace MightyAdventures.EnemySystem
             while (true)
             {
                 yield return new WaitForSeconds(spawnedEnemyData.Stats.AttackSpeed.Value);
-                playerCharacterData.Damage(spawnedEnemyData.Stats.Damage.Value);
+                playerCharacterBehaviour.Damage(spawnedEnemyData.Stats.Damage.Value);
             }
         }
 

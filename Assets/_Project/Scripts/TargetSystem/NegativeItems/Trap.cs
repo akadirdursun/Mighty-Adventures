@@ -1,17 +1,17 @@
 using MightyAdventures.CharacterSystem;
 using UnityEngine;
 
-namespace MightyAdventures.TargetSystem.Traps
+namespace MightyAdventures.TargetSystem.NegativeItems
 {
     public class Trap : AbstractTarget
     {
-        [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private float damage;
 
         public override void OnHit()
         {
             base.OnHit();
-            playerCharacterData.Damage(damage);
+            playerCharacterBehaviour.Damage(damage);
         }
     }
 }

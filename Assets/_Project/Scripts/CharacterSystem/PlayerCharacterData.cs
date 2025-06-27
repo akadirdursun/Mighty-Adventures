@@ -7,7 +7,6 @@ namespace MightyAdventures.CharacterSystem
     [CreateAssetMenu(fileName = "PlayerCharacterData", menuName = "Mighty Adventures/Character System/Player Character Data")]
     public class PlayerCharacterData : ScriptableObject
     {
-        [SerializeField] private PlayerCharacterExperienceData experienceData;
         [SerializeField, Space] private string characterName;
         [SerializeField] private int level = 1;
         [SerializeField] private float experience;
@@ -20,49 +19,37 @@ namespace MightyAdventures.CharacterSystem
         public float CurrentExperience => experience;
         public GameObject CharacterPrefab => _template.Prefab;
         public PlayerCharacterStats Stats => stats;
-        public Action OnCharacterLevelUp;
-        public Action OnCharacterExperienceChanged;
         public Action OnCharacterInitialized;
 
-        public void InitializePlayerCharacter()
+        public void InitializePlayerCharacter(float targetExperience)
         {
             characterName = _template.CharacterName;
             stats = _template.PlayerCharacterStats.Clone();
             level = 1;
             experience = 0;
-            SetTargetExperience();
+            _targetExperience = targetExperience;
             OnCharacterInitialized?.Invoke();
         }
-        
-        public void InitializePlayerCharacter(PlayerCharacterTemplate template)
+
+        public void InitializePlayerCharacter(PlayerCharacterTemplate template, float targetExperience)
         {
             _template = template;
-            InitializePlayerCharacter();
+            InitializePlayerCharacter(targetExperience);
         }
 
-        public void AddExperience(float experienceToAdd)
+        public void LevelUp()
         {
-            experience += experienceToAdd;
-            OnCharacterExperienceChanged?.Invoke();
-            while (experience >= _targetExperience)
-            {
-                level++;
-                experience -= _targetExperience;
-                SetTargetExperience();
-                OnCharacterLevelUp?.Invoke();
-            }
+            level++;
         }
 
-        private void SetTargetExperience()
+        public void SetExperience(float newExperience)
         {
-            var targetLevel = level + 1;
-            _targetExperience = experienceData.GetExperienceCost(targetLevel);
+            experience = newExperience;
         }
 
-        public void Damage(float damageTaken)
+        public void SetTargetExperience(float newTargetExperience)
         {
-            var resistanceAmount = damageTaken * stats.DamageResistance.PercentValue;
-            stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
+            _targetExperience = newTargetExperience;
         }
     }
 }

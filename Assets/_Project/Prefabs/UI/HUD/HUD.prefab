@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
   experienceSlider: {fileID: 5123883877242884716}
   levelText: {fileID: 754162833019927162}
   experienceText: {fileID: 6548577076836907727}

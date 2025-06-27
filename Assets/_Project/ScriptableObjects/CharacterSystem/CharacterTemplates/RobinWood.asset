@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59609148bcf01b34b9f208894a59b032, type: 3}
+  m_Name: RobinWood
+  m_EditorClassIdentifier: 
+  characterName: Robin Wood
+  playerCharacterStats:
+    health:
+      maxValue: 10
+      regenRate: 0.25
+    damage:
+      minValue: 3
+      maxValue: 3
+    damageResistance:
+      value: 0
+    attackSpeed:
+      value: 2
+    maxSkillTokenCount:
+      value: 2
+  prefab: {fileID: 1898877108402680609, guid: 5902ed16bbd39b847874dea66807abce, type: 3}

@@ -6,6 +6,7 @@ namespace MightyAdventures.TargetSystem.PositiveItems
     public class HealthPotion : AbstractTarget
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField, Range(0f, 100f)] private float healPercent;
 
         private void Heal()
@@ -13,7 +14,7 @@ namespace MightyAdventures.TargetSystem.PositiveItems
             var healthStat = playerCharacterData.Stats.Health;
             var currentHealth = healthStat.Value;
             var healAmount = currentHealth * healPercent / 100f;
-            healthStat.IncreaseCurrentValue(healAmount);
+            playerCharacterBehaviour.Heal(healAmount);
         }
 
         #region AbstractTarget Overrides

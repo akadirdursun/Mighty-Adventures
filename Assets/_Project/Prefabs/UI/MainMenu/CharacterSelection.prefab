@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterExperienceData: {fileID: 11400000, guid: 1e8da9d9048d6a0489f180088d1b3b16, type: 2}
   statTextPreview: {fileID: 7813644637895607687}
   characterParent: {fileID: 2593713038250472952}
   characterPrefabScale: 50

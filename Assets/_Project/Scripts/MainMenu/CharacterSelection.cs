@@ -10,6 +10,7 @@ namespace MightyAdventures.MainMenu
     public class CharacterSelection : MonoBehaviour
     {
         [SerializeField] private PlayerCharacterData playerCharacterData;
+        [SerializeField] private PlayerCharacterExperienceData playerCharacterExperienceData;
         [SerializeField] private StatTextPreview statTextPreview;
         [SerializeField] private Transform characterParent;
         [SerializeField] private float characterPrefabScale = 2f;
@@ -27,7 +28,8 @@ namespace MightyAdventures.MainMenu
 
         private void OnSelectButtonClicked()
         {
-            playerCharacterData.InitializePlayerCharacter(_playerCharacterTemplate);
+            var targetExperience = playerCharacterExperienceData.GetExperienceCost(2);
+            playerCharacterData.InitializePlayerCharacter(_playerCharacterTemplate, targetExperience);
             SceneLoader.Instance.LoadGameScene();
         }
 

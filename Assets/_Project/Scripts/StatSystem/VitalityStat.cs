@@ -24,7 +24,6 @@ namespace MightyAdventures.StatSystem
         public float MaxValue => maxValue;
         public bool IsFull => _currentValue == maxValue;
         public float RegenRage => regenRate;
-        public Action OnVitalDropToZero;
 
         public void IncreaseMaxValue(float additionValue)
         {
@@ -50,8 +49,6 @@ namespace MightyAdventures.StatSystem
         {
             _currentValue = Mathf.Clamp(_currentValue - removedValue, 0, maxValue);
             OnStatChanged?.Invoke();
-            if (_currentValue > 0) return;
-            OnVitalDropToZero?.Invoke();
         }
 
         public void RegenVitality()
