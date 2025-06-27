@@ -1,10 +1,9 @@
-using System;
 using MightyAdventures.GameStateSystem;
 using UnityEngine;
 
 namespace MightyAdventures.CharacterSystem
 {
-    public class PlayerLevelUpHandler : MonoBehaviour
+    public class PlayerLevelUpStateHandler : MonoBehaviour
     {
         [SerializeField] private PlayerCharacterBehaviour playerCharacterBehaviour;
         [SerializeField] private GameStateData gameStateData;
