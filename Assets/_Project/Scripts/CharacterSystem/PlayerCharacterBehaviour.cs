@@ -30,6 +30,8 @@ namespace MightyAdventures.CharacterSystem
             var resistanceAmount = damageTaken * damageResistanceStat.PercentValue;
             Stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
             OnDamaged?.Invoke();
+            if (Stats.Health.Value > 0) return;
+            OnDied?.Invoke();
         }
 
         public void Heal()
