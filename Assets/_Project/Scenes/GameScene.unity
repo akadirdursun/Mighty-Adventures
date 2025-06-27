@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedEnemyData: {fileID: 11400000, guid: 76a8aa49fe464fc42a44870c12636769, type: 2}
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
 --- !u!114 &810040820
 MonoBehaviour:
   m_ObjectHideFlags: 0

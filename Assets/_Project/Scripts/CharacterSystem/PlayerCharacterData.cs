@@ -58,11 +58,5 @@ namespace MightyAdventures.CharacterSystem
             var targetLevel = level + 1;
             _targetExperience = experienceData.GetExperienceCost(targetLevel);
         }
-
-        public void Damage(float damageTaken)
-        {
-            var resistanceAmount = damageTaken * stats.DamageResistance.PercentValue;
-            stats.Health.DecreaseCurrentValue(damageTaken - resistanceAmount);
-        }
     }
 }

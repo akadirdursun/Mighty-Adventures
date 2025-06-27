@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRigidbody: {fileID: 1828175875255724580}
-  playerCharacterData: {fileID: 11400000, guid: 0be81836c43640046a950d100ba2e26c, type: 2}
+  playerCharacterBehaviour: {fileID: 11400000, guid: 5847aa04f19dc27478c8091752afb53d, type: 2}
   damage: 3
 --- !u!54 &1828175875255724580 stripped
 Rigidbody:
